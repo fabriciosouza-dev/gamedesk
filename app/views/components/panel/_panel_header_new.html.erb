@@ -1,0 +1,6 @@
+<div class="card-body card-body align-left-right">
+  <h1 class="section-title"><%= options[:title] %></h1>
+  <% if (can? :create, :all) && options[:link].present? %>
+    <%= link_to_novo(options[:link], options[:link_options]) %>
+  <% end %>
+</div>

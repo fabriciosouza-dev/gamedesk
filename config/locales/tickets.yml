@@ -1,0 +1,48 @@
+pt-BR:
+  activerecord:
+    models:
+      ticket: 'Chamado'
+    attributes:
+      ticket:
+        id: 'Código'
+        ticket_id: 'Código do Chamado'
+        subject: 'Corpo do Chamado'
+        raw_subject: 'Corpo do chamado em html'
+        description: 'Descrição'
+        priority: 'Prioridade'
+        prioritys:
+          baixo: "Baixa"
+          normal: "Normal"
+          alta: "Alta"
+          urgente: "Urgente"
+        status: 'Status'
+        statuses:
+          aberto: "Aberto"
+          resolvido: "Resolvido"
+          pendente: "Pendente"
+          fechado: "Fechado"
+        recipient: ''
+        requester_id: ''
+        submitter_id: ''
+        assignee_id: 'Atribuído'
+        organization_id: ''
+        group_id: ''
+        forum_topic_id: ''
+        problem_id: ''
+        has_incidents: ''
+        is_public: 'Público?'
+        allow_channelback: ''
+        allow_attachments: ''
+        satisfaction_rating: ''
+        ticket_form_id: ''
+        brand_id: ''
+        due_at: ''
+        flag_game: ''
+        xp: 'XP'
+        flag_calc_level: ''
+        open_at: ''
+        changed_at: ''
+        closed_at: ''
+        created_at: ''
+        updated_at: ''
+        pending_at: ''

@@ -1,0 +1,53 @@
+<div class="card card-primary">
+  <div class="card-header">
+    <h4>Últimos Chamados</h4>
+    <div class="card-header-action">
+      <a data-collapse="#ultimos-chamados" class="btn btn-icon btn-warning" href="#"><i class="fas fa-minus"></i></a>
+    </div>
+  </div>
+  <div class="collapse show" id="ultimos-chamados" style="">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-12 col-md-12 col-lg-12">
+          <div class="table-responsive">
+            <table class="table table-striped mb-0">
+              <thead>
+              <tr>
+                <th>Título</th>
+                <th>Atríbuido</th>
+                <th>Prioridade</th>
+                <th>Status</th>
+                <th>Atualizado em</th>
+              </tr>
+              </thead>
+              <tbody>
+              <% @last_tickets.each do |ticket| %>
+                <tr>
+                  <td><%= ticket.subject %></td>
+                  <td>
+                    <% if current_user.admin? %>
+
+                      <%= link_to edit_user_path(ticket.user), class: 'font-weight-600' do %>
+                        <%= user_profile_img(ticket.user, { class: "rounded-circle mr-1", width: "30" }) %>
+                        <%= ticket.user.name %>
+                      <% end %>
+                    <% else %>
+                      <%= link_to edit_profile_path(ticket.user), class: 'font-weight-600' do %>
+                        <%= user_profile_img(ticket.user, { class: "rounded-circle mr-1", width: "30" }) %>
+                        <%= ticket.user.name %>
+                      <% end %>
+                    <% end %>
+                  </td>
+                  <td><%= translate_enum_name(Ticket, :prioritys, ticket.priority) %></td>
+                  <td><%= translate_enum_name(Ticket, :statuses, ticket.status) %></td>
+                  <td><%= timezone(ticket.updated_at) %></td>
+                </tr>
+              <% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

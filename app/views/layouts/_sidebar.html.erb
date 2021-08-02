@@ -1,0 +1,13 @@
+<div class="main-sidebar sidebar-style-2">
+  <aside id="sidebar-wrapper">
+    <div class="sidebar-brand">
+      <%= link_to root_path do %>
+        <%= image_tag "icon_new_with_name.png", class: 'image-logo-sm' %>
+      <% end %>
+    </div>
+    <ul class="sidebar-menu">
+      <%= render 'layouts/menus/dashboard/dashboard' %>
+      <%= render 'layouts/menus/configuracao/configuracao' %>
+    </ul>
+  </aside>
+</div>

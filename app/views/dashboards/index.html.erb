@@ -1,0 +1,47 @@
+<%#= render 'components/panel/panel_header_link',
+           options: { link: popula_tabela_service_dashboards_path,
+                      class: 'btn btn-warning float-right',
+                      label: 'Atualizar',
+                      remote: true,
+                      icon: 'fa-sync', title: 'Dashboard', permission:  } %>
+
+<div class="row card-body align-left-right">
+  <h1 class="section-title">Dashboard</h1>
+  <% if current_user.admin? %>
+    <%= button_tag nil, { id: "popula-tabela-service",
+                          type: 'button',
+                          class: 'btn btn-warning' } do %>
+      <i class="fas fa-sync"></i>
+      Atualizar
+    <% end %>
+  <% end %>
+</div>
+
+
+<% if can? :manage, :all %>
+  <%= render "admin_dashboard" %>
+<% else %>
+  <%= render "user_dashboard" %>
+<% end %>
+
+<script>
+    "use strict";
+    var ctx = document.getElementById("chamados_chart").getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'pie',
+        data: JSON.parse('<%= @grafico.to_json.html_safe %>'),
+    });
+
+    $('#popula-tabela-service').on("click", function () {
+        $(this).addClass("disabled btn-progress")
+        $.ajax({
+            method: "GET",
+            url: "<%= popula_tabela_service_dashboards_path(format: :js) %>",
+            success: function (data) {
+                location.reload();
+            },
+            error: function (data) {
+            }
+        });
+    })
+</script>

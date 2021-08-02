@@ -1,0 +1,7 @@
+<% options[:permission] ||= true %>
+<div class="row card-body align-left-right">
+  <h1 class="section-title"><%= options[:title] %></h1>
+  <% if options[:permission] %>
+    <%= link_to_button(options[:link], options[:icon], options) %>
+  <% end %>
+</div>

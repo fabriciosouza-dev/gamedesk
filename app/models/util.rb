@@ -1,0 +1,14 @@
+class Util
+  def self.calcula_xp(level)
+    (level / 0.07) ** 2
+  end
+
+  def self.percent(value, total)
+    (value * 100) / total
+  end
+
+  def self.translate_enum_name(class_name, enum_name, enum_value)
+    return nil unless enum_value
+    I18n.t("activerecord.attributes.#{class_name.to_s.underscore}.#{enum_name}.#{enum_value}")
+  end
+end

@@ -1,0 +1,5 @@
+<li class="menu-header">Configuração</li>
+<% if can? :manage, :all %>
+  <%= render 'layouts/menus/configuracao/cadastros_basicos' %>
+<% end %>
+<li><%= link_to_menu(profiles_path, 'fa-user', { label: 'Perfil' }) %></li>

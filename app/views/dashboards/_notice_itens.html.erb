@@ -1,0 +1,78 @@
+<div class="card card-primary">
+  <div class="card-header">
+    <h4>Informações</h4>
+    <div class="card-header-action">
+      <a data-collapse="#notice-itens" class="btn btn-icon btn-warning" href="#"><i class="fas fa-minus"></i></a>
+    </div>
+  </div>
+  <div class="collapse show" id="notice-itens" style="">
+    <div class="card-body">
+      <div class="row">
+        <% if current_user.admin? %>
+          <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+            <div class="card card-statistic-1">
+              <div class="card-icon bg-primary">
+                <i class="far fa-user"></i>
+              </div>
+              <div class="card-wrap">
+                <div class="card-header">
+                  <h4>Total Admin</h4>
+                </div>
+                <div class="card-body">
+                  <%= @nmr_admins %>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+          <div class="card card-statistic-1">
+            <div class="card-icon bg-danger">
+              <i class="far fa-newspaper"></i>
+            </div>
+            <div class="card-wrap">
+              <div class="card-header">
+                <h4>Últimas 24h</h4>
+              </div>
+              <div class="card-body">
+                <%= @last_24h_tickets %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+          <div class="card card-statistic-1">
+            <div class="card-icon bg-warning">
+              <i class="far fa-file"></i>
+            </div>
+            <div class="card-wrap">
+              <div class="card-header">
+                <h4>Chamados</h4>
+              </div>
+              <div class="card-body">
+                <%= @nmr_tickets %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% if current_user.admin? %>
+          <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+            <div class="card card-statistic-1">
+              <div class="card-icon bg-success">
+                <i class="fas fa-circle"></i>
+              </div>
+              <div class="card-wrap">
+                <div class="card-header">
+                  <h4>Usuários</h4>
+                </div>
+                <div class="card-body">
+                  <%= @nmr_users %>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

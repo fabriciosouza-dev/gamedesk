@@ -1,0 +1,32 @@
+pt-BR:
+  labels:
+    actions: 'Ações '
+    new: 'Novo '
+    newa: 'Nova '
+    edit: 'Editar '
+    show: 'Visualizar '
+    index: 'Listar '
+    delete: 'Excluir '
+    update: 'Atualizar '
+    create: 'Cadastrar '
+    return: 'Voltar'
+    add: Adicionar
+    complete: Concluir
+    yess: Sim
+    noo: Não
+    close: Fechar
+    cancel: Cancelar
+    save: Salvar
+    saving: Salvando
+    generate: Gerar
+    confirm_cancel: 'Deseja realmente inativar o registro?'
+    confirm_delete: 'Deseja realmente excluir o registro?'
+    new_project: 'Novo Projeto'
+    edit_project: 'Editar Projeto'
+    portifolio: 'Portifólio'
+    not_loged_in: 'Você não efetuou login'
+    not_authorized: "Você não possui permissão"
+    active: "Ativo"
+    inactive: "Inativo"
+    placeholder_search: "Digite aqui sua pesquisa..."
+    deferimento_em_lote: 'Deferimento em lote'

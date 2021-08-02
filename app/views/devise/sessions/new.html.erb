@@ -1,0 +1,47 @@
+<div class="card card-primary">
+  <div class="card-header"><h4>Login</h4></div>
+  <div class="card-body">
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'user' }) do |f| %>
+      <div class="form-group">
+        <%= f.label :email, class: 'control-label' %><br/>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email",
+                          class: 'form-control',
+                          placeholder: "Digite seu Email..." %>
+      </div>
+
+      <div class="form-group">
+        <div class="d-block">
+          <label for="password" class="control-label"><%= translate_attr(User, :password) %></label>
+          <div class="float-right">
+            <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+              <%= link_to "Esqueceu sua senha?", new_password_path(resource_name), class: 'text-small' %><br/>
+            <% end %>
+          </div>
+        </div>
+        <%= f.password_field :password, autocomplete: "current-password",
+                             class: 'form-control',
+                             placeholder: "Digite sua Senha..." %>
+      </div>
+
+      <% if devise_mapping.rememberable? %>
+        <div class="form-group">
+          <div class="custom-control custom-checkbox">
+            <%= f.check_box :remember_me, class: 'custom-control-input' %>
+            <%= f.label :remember_me, "#{translate_attr(User, :remember_me)}", class: 'custom-control-label' %>
+          </div>
+        </div>
+      <% end %>
+
+      <div class="form-group">
+        <%= f.submit "Login", class: 'btn btn-primary btn-lg btn-block', tabindex: 4 %>
+      </div>
+    <% end %>
+    <hr>
+  </div>
+</div>
+<div class="mt-5 text-muted text-center">
+  <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+    Não tem uma conta?
+    <%= link_to "Sign up", new_registration_path(resource_name) %><br/>
+  <% end %>
+</div>

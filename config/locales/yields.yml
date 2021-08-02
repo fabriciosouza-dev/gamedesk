@@ -1,0 +1,10 @@
+pt-BR:
+  activerecord:
+    models:
+      yield: 'Performance'
+    attributes:
+      yield:
+        id: 'Código'
+        assignee_id: 'Atribuído'
+        xp: 'XP'
+        level: 'Level'

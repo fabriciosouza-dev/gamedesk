@@ -1,0 +1,14 @@
+pt-BR:
+  activerecord:
+    models:
+      profile: 'Usuário'
+    attributes:
+      profile:
+        id: 'Código'
+        email: 'E-mail'
+        name: 'Nome'
+        image: 'Imagem'
+        admin: 'Admin?'
+        password: 'Senha'
+        password_confirmation: 'Confirmação da Senha'
+        remember_me: 'Lembre de mim'

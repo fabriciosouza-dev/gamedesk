@@ -1,0 +1,24 @@
+//= require jquery/dist/jquery
+//= require popper.js/dist/umd/popper
+//= require tooltip.js/dist/umd/tooltip
+//= require bootstrap/dist/js/bootstrap
+//= require datatables/media/js/jquery.dataTables
+//= require nicescroll/jquery.nicescroll
+//= require moment/moment.js
+//= require stisla
+//= require jquery-sparkline/jquery.sparkline
+//= require chart.js/dist/chart
+//= require owl.carousel/dist/owl.carousel
+//= require summernote/dist/summernote-bs4
+//= require chocolat/dist/js/jquery.chocolat
+//= require sweetalert/dist/sweetalert.min
+//= require izitoast/dist/js/iziToast
+//= require jquery-pwstrength/jquery.pwstrength
+//= require scripts
+//= require custom
+//= require jquery
+//= require rails-ujs
+//= require activestorage
+//= require turbolinks
+//= require_tree .
+

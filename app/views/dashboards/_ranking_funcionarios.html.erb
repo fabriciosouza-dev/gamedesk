@@ -1,0 +1,38 @@
+<div class="card card-primary">
+  <div class="card-header">
+    <h4>Ranking</h4>
+    <div class="card-header-action">
+      <a data-collapse="#ranking-funcionarios" class="btn btn-icon btn-warning" href="#"><i class="fas fa-minus"></i></a>
+    </div>
+  </div>
+  <div class="collapse show" id="ranking-funcionarios" style="">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-12 col-md-12 col-lg-12">
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+              <tr>
+                <th>#</th>
+                <th>Nome</th>
+                <th>Level</th>
+                <th>XP</th>
+              </tr>
+              </thead>
+              <tbody>
+              <% @rank.each.with_index(1) do |object_yield, index| %>
+                <tr>
+                  <td class="text-align-center"><%= podium(index) %></td>
+                  <td class="vertical-align-middle"><%= object_yield&.user&.name %></td>
+                  <td class="vertical-align-middle text-align-center"><%= object_yield.level %></td>
+                  <td class="vertical-align-middle fifty_width"><%= progress(object_yield.xp.to_i, Util.calcula_xp(object_yield.level)) %></td>
+                </tr>
+              <% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

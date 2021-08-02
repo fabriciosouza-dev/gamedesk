@@ -1,0 +1,66 @@
+.float-right {
+  float: right;
+}
+
+.align-items-center {
+  display: flex;
+  align-items: center;
+}
+
+.align-left-right {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn-primary:hover {
+  color: #fff;
+  background-color: #464646;
+  border-color: #464646;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #464646;
+  border-color: #464646;
+}
+
+btn-primary.disabled, .btn-primary:disabled {
+  color: #fff;
+  background-color: #464646;
+  border-color: #464646;
+}
+
+.vertical-align-middle {
+  vertical-align: middle;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.fifty_width {
+  width: 50%;
+}
+
+.image-logo-sm {
+  width: 176px;
+  height: auto;
+}
+
+.image-logo-lg {
+  width: 350px;
+  height: auto;
+}
+
+.image-size-logo-nav {
+  float: left;
+  width: 30px;
+  margin: -35px -5px 0 30px;
+  position: relative;
+  z-index: 1;
+}
+
+.middle > * {
+  vertical-align: middle;
+}

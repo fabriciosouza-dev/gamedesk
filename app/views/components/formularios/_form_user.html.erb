@@ -1,0 +1,84 @@
+<% label_form ||= "" %>
+<%= form_with(model: object, local: true) do |f| %>
+  <div class="row mt-sm-4">
+    <div class="col-12 col-md-12 col-lg-6">
+      <div class="card card-primary">
+        <div class="card-header">
+          <h4><%= label_form %></h4>
+        </div>
+        <div class="card-body">
+          <%= render 'components/errors_message', object: object %>
+          <div class="card profile-widget">
+            <%= f.hidden_field :origem %>
+            <div class="profile-widget-header">
+              <%= user_profile_img(f&.object, { class: 'rounded-circle profile-widget-picture', id: 'img_prev' }) %>
+            </div>
+            <div class="custom-file">
+              <%= f.file_field :image, class: 'custom-file-input', onchange: "readURL(this);" %>
+              <%= f.label :image, "#{translate_attr(object.class.name, :image)}", id: 'label_imag', class: 'custom-file-label' %>
+              <br/>
+            </div>
+
+
+          </div>
+          <% if current_user.admin? %>
+            <div class="form-row">
+              <div class="form-group col-md-12 align-items-center">
+                <div class="form-check">
+                  <%= f.check_box :admin, class: 'form-check-input' %>
+                  <%= f.label :admin, "#{translate_attr(object.class.name, :admin)}", class: 'form-check-label' %> <br/>
+                </div>
+              </div>
+            </div>
+          <% end %>
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <%= f.label :name %><br/>
+              <%= f.text_field :name, class: 'form-control' %>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <%= f.label :email, "#{translate_attr(object.class.name, :email)}" %><br/>
+              <%= f.email_field :email, class: 'form-control', autofocus: true, autocomplete: "email" %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :password, "#{translate_attr(object.class.name, :password)}" %>
+            <%= f.password_field :password,
+                                 class: "form-control" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :password_confirmation, "#{translate_attr(object.class.name, :password_confirmation)}" %>
+            <%= f.password_field :password_confirmation,
+                                 class: "form-control" %>
+          </div>
+
+          <div class="align-left-right">
+            <%= link_to 'Back', users_path, class: "btn btn-primary" %>
+            <%= f.submit "Salvar", { class: 'btn btn-warning mr-1' } %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+<script>
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('#img_prev')
+                    .attr('src', e.target.result)
+                    .width(150)
+                    .height(200);
+            };
+            var label_img = $('#label_imag')
+            label_img.text(input.files[0]['name']);
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+</script>

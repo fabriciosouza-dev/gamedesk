@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+  <title>Gamedesk</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <!-- General CSS Files -->
+  <%= stylesheet_link_tag 'application' %>
+  <%= javascript_include_tag 'application' %>
+  <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+          dataLayer.push(arguments);
+      }
+
+      gtag('js', new Date());
+
+      gtag('config', 'UA-94034622-3');
+
+  </script>
+  <!-- /END GA --></head>
+
+<body>
+<div id="app">
+  <div class="main-wrapper main-wrapper-1">
+    <%= render 'layouts/navbar' %>
+    <%= render "layouts/sidebar" %>
+    <!-- Main Content -->
+    <div class="main-content">
+      <section class="section">
+        <div class="section-header">
+          <%= render_breadcrumbs separator: " / " %>
+        </div>
+        <div class="section-body">
+          <%= yield %>
+        </div>
+      </section>
+    </div>
+    <%= render 'layouts/footer' %>
+  </div>
+</div>
+
+<% if flash.any? %>
+  <script type="text/javascript">
+      <% flash.each do |key, value| %>
+      <% type = key.to_s.gsub('alert', 'error').gsub('notice', 'info') %>
+      iziToast.<%= type %>({
+          title: '<%= value %>',
+          position: 'topRight'
+      });
+      <% end %>
+  </script>
+  <% flash.clear %>
+<% end %>
+
+</body>
+</html>

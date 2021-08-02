@@ -1,0 +1,17 @@
+<%= form_with(model: yield, local: true) do |form| %>
+  <% if yield.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(yield.errors.count, "error") %> prohibited this yield from being saved:</h2>
+
+      <ul>
+      <% yield.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
