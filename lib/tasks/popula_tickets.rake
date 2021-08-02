@@ -45,20 +45,26 @@ namespace :popula_tickets do
       # use the API at https://yoursubdomain.zendesk.com/api/v2
     end
 
+    Yield.destroy_all
+    Ticket.destroy_all
+    Comment.destroy_all
+
     client.tickets.map { |x| x[:id] }.each do |ticket|
       ZendeskAPI::Ticket.destroy!(client, id: ticket)
     end
 
-    (1..40).each do |n|
+    (1..100).each do |n|
       ZendeskAPI::Ticket.create!(client, subject: subjects.shuffle.first,
-                                 comment: { value: "This is a test" },
-                                 status: status.shuffle.first,
-                                 submitter_id: end_user(client).shuffle.first, priority: priority.shuffle.first,
+                                 comment: { value: "Conteúdo do Chamado" },
+                                 status: status,
+                                 submitter_id: end_user(client).shuffle.first, priority: priority,
                                  assignee_id: agents(client).shuffle.first
       )
     end
 
   end
+
+  private
 
   def agents(client)
     client.users.select { |x| ['admin', 'agent'].include?(x[:role]) }.map { |x| x.id }
@@ -69,11 +75,27 @@ namespace :popula_tickets do
   end
 
   def priority
-    ['high', 'low', 'normal', 'urgent']
+    number = array.shuffle.first
+    if [*1..4].include?(number)
+      'urgent'
+    elsif [*5..7].include?(number)
+      'high'
+    elsif [*8..9].include?(number)
+      'normal'
+    else
+      'low'
+    end
   end
 
   def status
-    ['pending', 'solved', 'open']
+    number = array.shuffle.first
+    if [*1..6].include?(number)
+      'solved'
+    elsif [*7..9].include?(number)
+      'pending'
+    elsif [10].include?(number)
+      'open'
+    end
   end
 
   def subjects
@@ -108,7 +130,41 @@ namespace :popula_tickets do
      "Hackear orkut",
      "Hackear youtube",
      "Torrent não abre",
+     "Minha impressora parou!",
+     "Arruma meu computador?",
+     "O ar condicionado parou!",
+     "Aquele Carinha da TI",
+     "Tá muito lento!",
+     "Área de Trabalho?",
+     "É URGENTE!",
+     "Apaguei sem querer…",
+     "O sistema não entra…",
+     "Garoto/a de Programa",
+     "Vem aqui rapidinho?",
+     "Sei lá, desligou do nada!",
+     "Não fiz nada", "Aceita cheque?",
+     "Backup? Não é automático?",
+     "Você fazer rapidinho, é bem simples…",
+     "Precisa abrir chamado?",
+     "Me ajuda a hackear um Facebook?",
+     "Você formata computador?",
+     "Meu computador tá com a ‘memória’ cheia…",
+     "O rapaz do computador vem aqui",
+     "Caiu a net!", "Instala Skygato?",
+     "Atende aos domingos?",
+     "Você faz programa?",
+     "Filho, me ajuda a usar o zap?",
+     "Formata meu celular?",
+     "Só fez isso? Tá muito caro!",
+     "É só uma alteraçãozinha…",
+     "Voltou a funcionar, acho que é sua presença",
+     "Oi, meu computador tá ‘mexendo’ sozinho",
+     "Só parou de funcionar depois que você mexeu"
     ]
+  end
+
+  def array
+    [*1..10]
   end
 
 end
