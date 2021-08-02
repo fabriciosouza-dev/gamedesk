@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   end
 
   def set_session_variables
-    # session[:user] = current_user.
+    # session[:user] = current_user
   end
 
 end
