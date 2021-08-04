@@ -13,8 +13,8 @@
             <table class="table table-striped mb-0">
               <thead>
               <tr>
-                <th>Título</th>
                 <th>Atríbuido</th>
+                <th>Título</th>
                 <th>Prioridade</th>
                 <th>Status</th>
                 <th>Atualizado em</th>
@@ -23,21 +23,20 @@
               <tbody>
               <% @last_tickets.each do |ticket| %>
                 <tr>
-                  <td><%= ticket.subject %></td>
                   <td>
                     <% if current_user.admin? %>
-
                       <%= link_to edit_user_path(ticket.user), class: 'font-weight-600' do %>
                         <%= user_profile_img(ticket.user, { class: "rounded-circle mr-1", width: "30" }) %>
                         <%= ticket.user.name %>
                       <% end %>
                     <% else %>
-                      <%= link_to edit_profile_path(ticket.user), class: 'font-weight-600' do %>
+                      <%= link_to profiles_path, class: 'font-weight-600' do %>
                         <%= user_profile_img(ticket.user, { class: "rounded-circle mr-1", width: "30" }) %>
                         <%= ticket.user.name %>
                       <% end %>
                     <% end %>
                   </td>
+                  <td><%= ticket.subject %></td>
                   <td><%= translate_enum_name(Ticket, :prioritys, ticket.priority) %></td>
                   <td><%= translate_enum_name(Ticket, :statuses, ticket.status) %></td>
                   <td><%= timezone(ticket.updated_at) %></td>

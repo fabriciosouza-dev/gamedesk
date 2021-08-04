@@ -1,7 +1,7 @@
 namespace :popula_tickets do
-
+  # rake popula_tickets:execute
   desc "a new task to be executed"
-  task :execute do
+  task execute: :environment do
     client = ZendeskAPI::Client.new do |config|
       # Mandatory:
       config.url = Rails.application.credentials.aws[:secret_url] # e.g. https://yoursubdomain.zendesk.com/api/v2
