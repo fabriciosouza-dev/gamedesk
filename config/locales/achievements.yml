@@ -1,0 +1,12 @@
+pt-BR:
+  activerecord:
+    models:
+      achievement: 'Conquista'
+    attributes:
+      achievement:
+        id: 'Código'
+        image: 'Icone'
+        regra: 'Regra'
+        descricao: 'Descriçao'
+        status: 'Status'
+        name: 'Nome'

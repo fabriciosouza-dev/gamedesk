@@ -1,0 +1,65 @@
+<% label_form ||= "" %>
+<%= form_with(model: achievement, local: true) do |f| %>
+  <div class="row mt-sm-4">
+    <div class="col-12 col-md-12 col-lg-6">
+      <div class="card card-primary">
+        <div class="card-header">
+          <h4><%= label_form %></h4>
+        </div>
+        <div class="card-body">
+          <%= render 'components/errors_message', object: f.object %>
+          <div class="card profile-widget">
+            <%= f.hidden_field :origem %>
+            <div class="profile-widget-header">
+              <%= img_or_default(f&.object, { class: 'rounded-circle profile-widget-picture', id: 'img_prev' }) %>
+            </div>
+            <div class="custom-file">
+              <%= f.file_field :image, class: 'custom-file-input', onchange: "readURL(this);" %>
+              <%= f.label :image, "#{translate_attr(f.object.class.name, :image)}", id: 'label_imag', class: 'custom-file-label' %>
+              <br/>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <%= f.label :name %><br/>
+              <%= f.text_field :name, autofocus: true, class: 'form-control' %>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <%= f.label :regra %><br/>
+              <%= f.text_field :regra, class: 'form-control' %>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <%= f.label :descricao %><br/>
+              <%= f.text_field :descricao, class: 'form-control' %>
+            </div>
+          </div>
+
+          <div class="align-left-right">
+            <%= link_to 'Back', users_path, class: "btn btn-primary" %>
+            <%= f.submit "Salvar", { class: 'btn btn-warning mr-1' } %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+<script>
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('#img_prev')
+                    .attr('src', e.target.result)
+                    .width(150)
+                    .height(200);
+            };
+            var label_img = $('#label_imag')
+            label_img.text(input.files[0]['name']);
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+</script>

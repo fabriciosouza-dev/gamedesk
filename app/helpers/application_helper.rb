@@ -92,6 +92,14 @@ module ApplicationHelper
     end
   end
 
+  def img_or_default(object, options = {})
+    if object.image.attached?
+      image_tag object.image, id: options[:id], class: options[:class], data: options[:data], width: options[:width]
+    else
+      image_tag 'image_default.png', id: options[:id], class: options[:class], width: options[:width]
+    end
+  end
+
   def timezone(date)
     return '' if date.blank?
     date.strftime("%d/%m/%Y %H:%M:%S")

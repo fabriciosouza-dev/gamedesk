@@ -17,7 +17,7 @@ gem 'uglifier', '= 4.1.0'
 gem 'mini_racer', platforms: :ruby
 gem 'draper'
 gem 'therubyracer'
-
+gem "aws-sdk-s3", require: false
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

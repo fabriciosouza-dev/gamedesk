@@ -1,0 +1,34 @@
+<%= render 'components/panel/panel_header_new',
+           options: { title: 'Conquistas',
+                      link: new_achievement_path,
+                      link_options: { label: "Novo" } } %>
+
+<div class="card-body">
+  <div class="table-responsive">
+    <table class="table table-bordered dataTable" width="100%" cellspacing="0">
+      <thead>
+      <tr>
+        <th>Ícone</th>
+        <th>Regra</th>
+        <th>Descrição</th>
+        <th>Status</th>
+        <th>Ações</th>
+      </tr>
+      </thead>
+      <tbody style="font-weight: bold">
+      <% @achievements.each do |achievement| %>
+        <tr>
+          <td><%= image_tag achievement.image, id: achievement[:id], width: 30 %></td>
+          <td><%= achievement.regra %></td>
+          <td><%= achievement.descricao %></td>
+          <td><%= achievement.status.to_i == 1 ? "Ativo" : "Inativo" %></td>
+          <td align="center">
+            <%= link_to_editar(edit_achievement_path(achievement)) %>
+            <%= link_to_excluir(achievement_path(achievement)) %>
+          </td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

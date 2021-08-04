@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_23_221460) do
+ActiveRecord::Schema.define(version: 2021_08_04_203230) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "achievements", force: :cascade do |t|
+    t.integer "icon", comment: "Identifica a imagem do icone"
+    t.string "regra", comment: "Identifica a regra do icone"
+    t.string "descricao", comment: "Identifica a descrição do icone"
+    t.integer "status", default: 1, comment: "Identifica se ativo ou inativo para o funcionario 0-Inativo 1-Ativo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -102,6 +111,13 @@ ActiveRecord::Schema.define(version: 2021_07_23_221460) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.datetime "pending_at"
+  end
+
+  create_table "user_achievements", force: :cascade do |t|
+    t.decimal "assignee_id", comment: "Identifica o funcionario"
+    t.integer "achievement_id", comment: "Identifica o relacionamento da conquista"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
