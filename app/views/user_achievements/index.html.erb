@@ -1,0 +1,17 @@
+<div class="card card-primary">
+  <div class="card-header">
+    <h4>Conquistas</h4>
+    <div class="card-header-action">
+      <a data-collapse="#notice-itens" class="btn btn-icon btn-warning" href="#"><i class="fas fa-minus"></i></a>
+    </div>
+  </div>
+  <div class="collapse show" id="notice-itens" style="">
+    <div class="card-body">
+      <div class="gallery gallery-md">
+        <% Achievement.where(status: 1).each do |icone| %>
+          <%= image_tag icone.image, class: "gallery-item filter-grayscale" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

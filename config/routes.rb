@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :yields
   resources :users, path: :usuarios
   resources :achievements, path: :cadastro_conquistas
+  resources :user_achievements, path: :conquistas, only: [:index]
   resources :profiles, path: :perfil, except: [:destroy, :create, :new]
   resources :dashboards, path: :principal, only: [:index] do
     get :popula_tabela_service, on: :collection
