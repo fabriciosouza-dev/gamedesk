@@ -11,8 +11,8 @@ module Gamedesk
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
     # Bower asset paths
+    config.assets.initialize_on_precompile = false
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
-
     # Precompile Bootstrap fonts
     # config.assets.precompile << %r(bootstrap-sass/assets/fonts/bootstrap/[\w-]+\.(?:eot|svg|ttf|woff2?)$)
     # Settings in config/environments/* take precedence over those specified here.
