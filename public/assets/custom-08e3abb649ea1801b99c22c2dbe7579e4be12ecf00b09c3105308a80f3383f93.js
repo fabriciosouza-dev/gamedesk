@@ -1,1 +1,0 @@
-"use strict";$(document).on("ready",function(){var e=window.location.pathname,a=new RegExp(e.replace(/\/$/,"")+"$");$(".menu a").each(function(){a.test(this.href.replace(/\/$/,""))&&$(this).parent().addClass("active")})});

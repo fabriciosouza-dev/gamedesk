@@ -1,8 +1,8 @@
-//= require jquery
+//= require jquery3
+//= require popper
+//= require bootstrap
 //= require rails-ujs
-//= require popper.js/dist/umd/popper
 //= require tooltip.js/dist/umd/tooltip
-//= require bootstrap/dist/js/bootstrap
 //= require datatables/media/js/jquery.dataTables
 //= require nicescroll/jquery.nicescroll
 //= require moment/moment.js

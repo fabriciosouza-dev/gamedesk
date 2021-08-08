@@ -11,11 +11,9 @@ module Gamedesk
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
     # Bower asset paths
-    root.join('vendor', 'assets', 'bower_components').to_s.tap do |bower_path|
-      config.assets.paths << bower_path
-    end
+    config.assets.paths << Rails.root.join("app", "assets", "fonts")
     # Precompile Bootstrap fonts
-    config.assets.precompile << %r(bootstrap-sass/assets/fonts/bootstrap/[\w-]+\.(?:eot|svg|ttf|woff2?)$)
+    # config.assets.precompile << %r(bootstrap-sass/assets/fonts/bootstrap/[\w-]+\.(?:eot|svg|ttf|woff2?)$)
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
