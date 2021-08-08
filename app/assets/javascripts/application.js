@@ -1,4 +1,5 @@
-//= require jquery/dist/jquery
+//= require jquery
+//= require rails-ujs
 //= require popper.js/dist/umd/popper
 //= require tooltip.js/dist/umd/tooltip
 //= require bootstrap/dist/js/bootstrap
@@ -17,8 +18,6 @@
 //= require jquery-pwstrength/jquery.pwstrength
 //= require scripts
 //= require custom
-//= require jquery
-//= require rails-ujs
 //= require activestorage
 //= require turbolinks
 //= require_tree .
