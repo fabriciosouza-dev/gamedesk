@@ -6,6 +6,7 @@
 //= require nicescroll/jquery.nicescroll
 //= require moment/moment.js
 //= require stisla
+//= require prismjs/prism
 //= require jquery-sparkline/jquery.sparkline
 //= require chart.js/dist/chart
 //= require owl.carousel/dist/owl.carousel

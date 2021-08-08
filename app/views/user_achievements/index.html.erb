@@ -8,8 +8,10 @@
   <div class="collapse show" id="notice-itens" style="">
     <div class="card-body">
       <div class="gallery gallery-md">
-        <% Achievement.where(status: 1).each do |icone| %>
-          <%= image_tag icone.image, class: "gallery-item filter-grayscale" %>
+        <% @achievements.order(:order).each do |icone| %>
+          <%= link_to open_achievements_user_achievements_path(id: icone.id), { remote: true, 'data-toggle' => "modal", 'data-target' => '#modal-window' } do %>
+            <%= image_tag icone.image, class: "gallery-item filter-grayscale" %>
+          <% end %>
         <% end %>
       </div>
     </div>

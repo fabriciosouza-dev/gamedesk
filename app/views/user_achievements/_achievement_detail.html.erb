@@ -1,0 +1,20 @@
+<div class="modal-body">
+  <div class="card">
+    <div class="card-header">
+      <h4><%= @achievement.name %></h4>
+    </div>
+    <div class="card-body">
+      <div class="gallery gallery-md">
+        <div class="row">
+          <%= image_tag @achievement.image, class: "gallery-item element-center" %>
+        </div>
+        <div class="row">
+          <h5 class="text-align-center element-center"><%= @achievement.descricao %></h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+</div>

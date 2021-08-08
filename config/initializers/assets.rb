@@ -15,6 +15,10 @@ Rails.application.config.assets.precompile += %w( fa-brands-400.eot fa-brands-40
                                                   fa-brands-400.woff2 fa-regular-400.eot fa-regular-400.svg fa-regular-400.ttf
                                                   fa-regular-400.woff fa-regular-400.woff2 fa-solid-900.eot fa-solid-900.svg
                                                   fa-solid-900.ttf fa-solid-900.woff fa-solid-900.woff2 )
+Rails.application.config.assets.precompile += %w( 1.png 3.png 5.png 7.png 9.png clock.png fast.png finish_line.png
+                                                  goal.png graph.png level_up.png medal.png mountain.png rocket.png
+                                                  role-model.png siren.png speed.png star.png success.png trophy.png
+                                                  willpower.png wreath.png ninja.png )
 # Rails.application.config.assets.precompile += /\.(?:svg|eot|woff|ttf)$/
 Rails.application.config.assets.paths << Rails.root.join("lib")
 Rails.application.config.assets.paths << Rails.root.join("vendor")
