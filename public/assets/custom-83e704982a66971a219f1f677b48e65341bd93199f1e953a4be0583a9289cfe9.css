@@ -1,0 +1,105 @@
+/* line 1, app/assets/stylesheets/custom.scss */
+.float-right {
+  float: right;
+}
+
+/* line 5, app/assets/stylesheets/custom.scss */
+.align-items-center {
+  display: flex;
+  align-items: center;
+}
+
+/* line 10, app/assets/stylesheets/custom.scss */
+.element-center {
+  display: block;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* line 16, app/assets/stylesheets/custom.scss */
+.align-left-right {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* line 22, app/assets/stylesheets/custom.scss */
+.btn-primary:hover {
+  color: #fff;
+  background-color: #464646;
+  border-color: #464646;
+}
+
+/* line 28, app/assets/stylesheets/custom.scss */
+.btn-primary {
+  color: #fff;
+  background-color: #464646;
+  border-color: #464646;
+}
+
+/* line 34, app/assets/stylesheets/custom.scss */
+btn-primary.disabled, .btn-primary:disabled {
+  color: #fff;
+  background-color: #464646;
+  border-color: #464646;
+}
+
+/* line 40, app/assets/stylesheets/custom.scss */
+.vertical-align-middle {
+  vertical-align: middle;
+}
+
+/* line 44, app/assets/stylesheets/custom.scss */
+.text-align-center {
+  text-align: center !important;
+}
+
+/* line 48, app/assets/stylesheets/custom.scss */
+.fifty_width {
+  width: 50%;
+}
+
+/* line 52, app/assets/stylesheets/custom.scss */
+.image-logo-sm {
+  width: 176px;
+  height: auto;
+}
+
+/* line 57, app/assets/stylesheets/custom.scss */
+.image-logo-lg {
+  width: 350px;
+  height: auto;
+}
+
+/* line 62, app/assets/stylesheets/custom.scss */
+.image-size-logo-nav {
+  float: left;
+  width: 30px;
+  margin: -35px -5px 0 30px;
+  position: relative;
+  z-index: 1;
+}
+
+/* line 70, app/assets/stylesheets/custom.scss */
+.middle > * {
+  vertical-align: middle;
+}
+
+/* line 74, app/assets/stylesheets/custom.scss */
+.icon-achievement {
+  color: #e3eaef;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 300;
+  margin: 0;
+  position: relative;
+  vertical-align: middle;
+  line-height: 1.28;
+  height: 45px;
+  width: 45px;
+}
+
+/* line 87, app/assets/stylesheets/custom.scss */
+.filter-grayscale {
+  filter: grayscale(1) invert(1);
+}
