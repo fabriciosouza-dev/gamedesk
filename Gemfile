@@ -37,8 +37,7 @@ gem "breadcrumbs_on_rails"
 
 # Use ActiveStorage variant
 gem 'mini_magick', '~> 4.8'
-gem 'bootstrap-sass', '~> 3.4.1'
-gem 'sassc-rails', '>= 2.1.0'
+gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'jquery-rails'
 
 # Use Capistrano for deployment
