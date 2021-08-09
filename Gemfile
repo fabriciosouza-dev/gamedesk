@@ -44,12 +44,14 @@ gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'font-awesome-sass', '~> 5.5.0'
 gem 'jquery-rails'
 gem 'autoprefixer-rails'
+gem 'whenever', require: false
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
+gem 'jquery-datatables'
 gem 'rails_12factor', group: :production
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

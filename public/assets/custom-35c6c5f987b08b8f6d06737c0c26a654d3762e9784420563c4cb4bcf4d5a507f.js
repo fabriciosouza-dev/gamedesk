@@ -1,0 +1,1 @@
+"use strict";$(document).on("ready",function(){var a=window.location.pathname,e=new RegExp(a.replace(/\/$/,"")+"$");$(".menu a").each(function(){e.test(this.href.replace(/\/$/,""))&&$(this).parent().addClass("active")})}),$(document).on("turbolinks:load",function(){$(".dataTable").DataTable({language:{url:"//cdn.datatables.net/plug-ins/1.10.25/i18n/Portuguese-Brasil.json"}})});

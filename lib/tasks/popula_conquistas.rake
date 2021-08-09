@@ -11,19 +11,46 @@ namespace :popula_conquistas do
   end
 
   def images
+    sql = <<-SQL
+        SELECT *
+                FROM gamedesk.tickets t
+            WHERE status = 'solved'
+            AND priority = 'urgent'
+            AND assignee_id = :assignee_id
+    SQL
     [
-      { image: '1.png', name: 'Nível 1', regra: '{{var}}[:level] >= 1', descricao: 'Jogador conquistou o nível 1', chave: 'nivel_1' },
-      { image: '3.png', name: 'Nível 3', regra: '{{var}}[:level] >= 3', descricao: 'Jogador conquistou o nível 3', chave: 'nivel_3' },
-      { image: '5.png', name: 'Nível 5', regra: '{{var}}[:level] >= 5', descricao: 'Jogador conquistou o nível 5', chave: 'nivel_5' },
-      { image: '7.png', name: 'Nível 7', regra: '{{var}}[:level] >= 7', descricao: 'Jogador conquistou o nível 7', chave: 'nivel_7' },
-      { image: '9.png', name: 'Nível 9', regra: '{{var}}[:level] >= 9', descricao: 'Jogador conquistou o nível 9', chave: 'nivel_9' },
-      { image: 'level_up.png', name: 'Level Up', regra: '{{var}}[:level] >= 15', descricao: 'Jogador conseguiu o nível acima do 15', chave: 'level_up' },
+      { image: '1.png', name: 'Nível 1', regra: 'object_yield[:level] >= 1', descricao: 'Jogador conquistou o nível 1', chave: 'nivel_1' },
+      { image: '3.png', name: 'Nível 3', regra: 'object_yield[:level] >= 3', descricao: 'Jogador conquistou o nível 3', chave: 'nivel_3' },
+      { image: '5.png', name: 'Nível 5', regra: 'object_yield[:level] >= 5', descricao: 'Jogador conquistou o nível 5', chave: 'nivel_5' },
+      { image: '7.png', name: 'Nível 7', regra: 'object_yield[:level] >= 7', descricao: 'Jogador conquistou o nível 7', chave: 'nivel_7' },
+      { image: '9.png', name: 'Nível 9', regra: 'object_yield[:level] >= 9', descricao: 'Jogador conquistou o nível 9', chave: 'nivel_9' },
+      { image: 'level_up.png', name: 'Level Up', regra: 'object_yield[:level] >= 15', descricao: 'Jogador conseguiu o nível acima do 15', chave: 'level_up' },
       { image: 'clock.png', name: 'Corrida Contra o Tempo', regra: 'a definir', descricao: 'Jogador resolveu 10 chamados no mesmo dia', chave: 'corrida_contra_tempo' },
       { image: 'fast.png', name: 'Alta Prioridade', regra: 'a definir', descricao: 'Jogador resolveu 3 chamados de alta prioridade(alto/urgente) no mesmo dia', chave: 'alta_prioridade' },
-      { image: 'finish_line.png', name: '10/10', regra: 'a definir', descricao: 'Jogador resolveu todos os chamados atríbuidos a ele', chave: 'dez_dez' },
-      { image: 'goal.png', name: 'Bala no Alvo', regra: 'a definir', descricao: 'Terminar o dia sem chamados', chave: 'bala_no_alvo' },
-      { image: 'graph.png', name: 'Trabalho com Gráficos', regra: 'a definir', descricao: 'Fechar 400 chamados no mês', chave: 'trabalho_com_graficos' },
-      { image: 'mountain.png', name: 'Um passo de cada Vez', regra: 'a definir', descricao: 'Fechou seu primeiro chamado de alta prioridade(alto/urgente)' },
+      { image: 'finish_line.png', name: '10/10',
+        regra: %q[Ticket.where(status: 'solved', assignee_id: @assignee_id).size == Ticket.where(assignee_id: @assignee_id).size],
+        descricao: 'Jogador resolveu todos os chamados atríbuidos a ele', chave: 'dez_dez' },
+      { image: 'goal.png', name: 'Bala no Alvo',
+        regra: %q[Ticket.find_by_sql(["SELECT *
+					                             FROM gamedesk.tickets t
+                                       WHERE open_at >= date_trunc('day', CURRENT_DATE)
+                                       AND assignee_id = :assignee_id",
+                                     { assignee_id: @assignee_id }]).size == 0 && Time.now.hour >= 18],
+        descricao: 'Terminar o dia sem chamados', chave: 'bala_no_alvo' },
+      { image: 'graph.png', name: 'Trabalho com Gráficos',
+        regra: %q[Ticket.find_by_sql(["SELECT *
+					                               FROM gamedesk.tickets t
+                                        WHERE closed_at >= date_trunc('month', CURRENT_DATE)
+                                        AND assignee_id = :assignee_id",
+                                     { assignee_id: @assignee_id }]).count >= 400],
+        descricao: 'Fechar 400 chamados no mês', chave: 'trabalho_com_graficos' },
+      { image: 'mountain.png', name: 'Um passo de cada Vez',
+        regra: %q[Ticket.find_by_sql(["SELECT *
+					                               FROM gamedesk.tickets t
+                                        WHERE status = 'solved'
+					                              AND priority in ('high','urgent')
+                                        AND assignee_id = :assignee_id",
+                                      { assignee_id: @assignee_id }]).count > 0], descricao: 'Fechou seu primeiro chamado de alta prioridade(alto/urgente)', chave: 'um_passo_cada_vez' },
       { image: 'rocket.png', name: 'Foguete não tem Ré', regra: 'a definir', descricao: 'Jogador resolveu 10 chamados de alta prioridade(alto/urgente) no mesmo dia', chave: 'foguete_nao_tem_re' },
       { image: 'ninja.png', name: "I'm NINJA", regra: 'a definir', descricao: 'Jogador resolveu 20 chamados de alta prioridade(alto/urgente) no mesmo dia', chave: 'im_ninja' },
       { image: 'role-model.png', name: 'My Man', regra: 'a definir', descricao: 'Fechou ao menos dois chamados por dia por 5 dias consecutivos', chave: 'my_man' },

@@ -65,6 +65,9 @@ class CalculaLevelService
           object_yield.update(xp: pontos_totais)
         end
       end
+      if (@old_ticket[:updated_at] != @new_ticket[:changed_at]) || @new_ticket[:closed_at].nil?
+        @new_ticket[:closed_at] = @old_ticket[:updated_at]
+      end
       @new_ticket.update(xp: pontos)
     end
 

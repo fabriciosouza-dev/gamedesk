@@ -48,13 +48,6 @@ class PopulaTabelaService
       # use the API at https://yoursubdomain.zendesk.com/api/v2
     end
 
-    client.users.select { |x| ['admin', 'agent'].include?(x[:role]) }.each do |user|
-      User.where(email: user[:email])
-          .first_or_create(atributos_user(user,
-                                          User.default_password,
-                                          user[:role]))
-    end
-
     client.tickets.each do |ticket|
       ticket_object = Ticket.find_by(ticket_id: ticket[:id])
       if ticket_object.present?
@@ -97,6 +90,14 @@ class PopulaTabelaService
                                 new_comments: new_comments,
                                 old_comments: comments).execute
       end
+    end
+
+    client.users.select { |x| ['admin', 'agent'].include?(x[:role]) }.each do |user|
+      User.where(email: user[:email])
+          .first_or_create(atributos_user(user,
+                                          User.default_password,
+                                          user[:role]))
+      ConquistasService.new(assignee_id: user.id).execute
     end
   end
 

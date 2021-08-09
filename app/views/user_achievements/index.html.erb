@@ -10,7 +10,8 @@
       <div class="gallery gallery-md">
         <% @achievements.order(:order).each do |icone| %>
           <%= link_to open_achievements_user_achievements_path(id: icone.id), { remote: true, 'data-toggle' => "modal", 'data-target' => '#modal-window' } do %>
-            <%= image_tag icone.image, class: "gallery-item filter-grayscale" %>
+            <%= image_tag icone.image, class: "gallery-item #{@user_achievements
+              .map(&:achievement_id).include?(icone.id) ? '' : 'filter-grayscale'}" %>
           <% end %>
         <% end %>
       </div>
