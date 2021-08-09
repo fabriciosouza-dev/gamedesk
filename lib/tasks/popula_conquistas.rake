@@ -11,13 +11,6 @@ namespace :popula_conquistas do
   end
 
   def images
-    sql = <<-SQL
-        SELECT *
-                FROM gamedesk.tickets t
-            WHERE status = 'solved'
-            AND priority = 'urgent'
-            AND assignee_id = :assignee_id
-    SQL
     [
       { image: '1.png', name: 'Nível 1', regra: 'object_yield[:level] >= 1', descricao: 'Jogador conquistou o nível 1', chave: 'nivel_1' },
       { image: '3.png', name: 'Nível 3', regra: 'object_yield[:level] >= 3', descricao: 'Jogador conquistou o nível 3', chave: 'nivel_3' },

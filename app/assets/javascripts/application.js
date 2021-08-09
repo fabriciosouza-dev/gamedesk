@@ -10,6 +10,11 @@
 //= require prismjs/prism
 //= require jquery-sparkline/jquery.sparkline
 //= require codemirror
+//= require codemirror/modes/xml
+//= require codemirror/modes/htmlmixed
+//= require codemirror/modes/javascript
+//= require codemirror/modes/ruby
+//= require codemirror/modes/haml
 //= require chart.js/dist/chart
 //= require owl.carousel/dist/owl.carousel
 //= require summernote/dist/summernote-bs4
