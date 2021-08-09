@@ -39,6 +39,7 @@ gem "breadcrumbs_on_rails"
 gem 'mini_magick', '~> 4.8'
 # gem 'bootstrap-sass', '~> 3.4.1'
 gem 'bootstrap', '~> 4.6.0'
+gem 'codemirror-rails'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'font-awesome-sass', '~> 5.5.0'
 gem 'jquery-rails'

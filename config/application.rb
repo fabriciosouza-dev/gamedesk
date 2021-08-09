@@ -13,6 +13,7 @@ module Gamedesk
     # Bower asset paths
     config.assets.initialize_on_precompile = false
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
+    config.assets.precompile += ["codemirror*", "codemirror/**/*"]
     # Precompile Bootstrap fonts
     # config.assets.precompile << %r(bootstrap-sass/assets/fonts/bootstrap/[\w-]+\.(?:eot|svg|ttf|woff2?)$)
     # Settings in config/environments/* take precedence over those specified here.

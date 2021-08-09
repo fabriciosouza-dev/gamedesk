@@ -9,6 +9,7 @@
 //= require stisla
 //= require prismjs/prism
 //= require jquery-sparkline/jquery.sparkline
+//= require codemirror
 //= require chart.js/dist/chart
 //= require owl.carousel/dist/owl.carousel
 //= require summernote/dist/summernote-bs4
