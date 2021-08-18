@@ -18,8 +18,21 @@ namespace :popula_conquistas do
       { image: '7.png', name: 'Nível 7', regra: 'object_yield[:level] >= 7', descricao: 'Jogador conquistou o nível 7', chave: 'nivel_7' },
       { image: '9.png', name: 'Nível 9', regra: 'object_yield[:level] >= 9', descricao: 'Jogador conquistou o nível 9', chave: 'nivel_9' },
       { image: 'level_up.png', name: 'Level Up', regra: 'object_yield[:level] >= 15', descricao: 'Jogador conseguiu o nível acima do 15', chave: 'level_up' },
-      { image: 'clock.png', name: 'Corrida Contra o Tempo', regra: 'a definir', descricao: 'Jogador resolveu 10 chamados no mesmo dia', chave: 'corrida_contra_tempo' },
-      { image: 'fast.png', name: 'Alta Prioridade', regra: 'a definir', descricao: 'Jogador resolveu 3 chamados de alta prioridade(alto/urgente) no mesmo dia', chave: 'alta_prioridade' },
+      { image: 'clock.png', name: 'Corrida Contra o Tempo', regra: %q[Ticket.find_by_sql(["SELECT
+                                                                                           t.assignee_id, date_trunc('day', t.closed_at),count(*)
+                                                                                           FROM gamedesk.tickets t
+                                                                                           WHERE t.status = 'solved'
+                                                                                           and assignee_id = :assignee_id
+                                                                                             group by t.assignee_id, date_trunc('day', t.closed_at)",
+                                     { assignee_id: @assignee_id }]).map{|x| x[:count] >= 10}.any?], descricao: 'Jogador resolveu 10 chamados no mesmo dia', chave: 'corrida_contra_tempo' },
+      { image: 'fast.png', name: 'Alta Prioridade', regra:  %q[Ticket.find_by_sql(["SELECT
+                                                                                           t.assignee_id, date_trunc('day', t.closed_at),count(*)
+                                                                                           FROM gamedesk.tickets t
+                                                                                           WHERE t.status = 'solved'
+                                                                                           and priority in ('high','urgent')
+                                                                                           and assignee_id = :assignee_id
+                                                                                             group by t.assignee_id, date_trunc('day', t.closed_at)",
+                                     { assignee_id: @assignee_id }]).map{|x| x[:count] >= 3}.any?], descricao: 'Jogador resolveu 3 chamados de alta prioridade(alto/urgente) no mesmo dia', chave: 'alta_prioridade' },
       { image: 'finish_line.png', name: '10/10',
         regra: %q[Ticket.where(status: 'solved', assignee_id: @assignee_id).size == Ticket.where(assignee_id: @assignee_id).size],
         descricao: 'Jogador resolveu todos os chamados atríbuidos a ele', chave: 'dez_dez' },
@@ -44,7 +57,14 @@ namespace :popula_conquistas do
 					                              AND priority in ('high','urgent')
                                         AND assignee_id = :assignee_id",
                                       { assignee_id: @assignee_id }]).count > 0], descricao: 'Fechou seu primeiro chamado de alta prioridade(alto/urgente)', chave: 'um_passo_cada_vez' },
-      { image: 'rocket.png', name: 'Foguete não tem Ré', regra: 'a definir', descricao: 'Jogador resolveu 10 chamados de alta prioridade(alto/urgente) no mesmo dia', chave: 'foguete_nao_tem_re' },
+      { image: 'rocket.png', name: 'Foguete não tem Ré', regra: %q[Ticket.find_by_sql(["SELECT
+                                                                                           t.assignee_id, date_trunc('day', t.closed_at),count(*)
+                                                                                           FROM gamedesk.tickets t
+                                                                                           WHERE t.status = 'solved'
+                                                                                           and priority in ('high','urgent')
+                                                                                           and assignee_id = :assignee_id
+                                                                                             group by t.assignee_id, date_trunc('day', t.closed_at)",
+                                     { assignee_id: @assignee_id }]).map{|x| x[:count] >= 10}.any?], descricao: 'Jogador resolveu 10 chamados de alta prioridade(alto/urgente) no mesmo dia', chave: 'foguete_nao_tem_re' },
       { image: 'ninja.png', name: "I'm NINJA", regra: %q[Ticket.find_by_sql(["SELECT date_trunc('day', closed_at),
                                                                                count(*)
                                                                                FROM gamedesk.tickets t
@@ -68,7 +88,18 @@ namespace :popula_conquistas do
                                                                                         where assignee_id = :assignee_id)",
                                       { assignee_id: @assignee_id }]).present? and Date.today.end_of_month == Date.today], descricao: 'Jogador fechou o mês com mais chamados de alta prioridade(alto/urgente) que os demais jogadores', chave: 'urgente' },
       { image: 'speed.png', name: 'Atrasado', regra: 'a definir', descricao: 'Atrasou 15 ou mais dias na entrega de um chamado', chave: 'atrasado' },
-      { image: 'success.png', name: 'Sucesso', regra: 'a definir', descricao: 'Finalizar o mês com saldo positivo(mais chamados fechados que abertos)', chave: 'sucesso' },
+      { image: 'success.png', name: 'Sucesso', regra: %q[Ticket.find_by_sql(["with table_1 as (SELECT
+                                                                                                 t.assignee_id, t.status,count(*)
+                                                                                                 FROM gamedesk.tickets t
+                                                                                                 WHERE assignee_id = :assignee_id
+                                                                                                 and t.status in ('open', 'solved')
+                                                                                                 and (t.closed_at >= date_trunc('month', CURRENT_DATE) or t.closed_at is null)
+                                                                                                   group by t.assignee_id, t.status),
+                                                                                               table_2 as (select count
+                                                                                                           FROM table_1)
+                                                                                                   select * from table_1
+                                                                                                   where count = (select max(count) from table_2)",
+                                      { assignee_id: @assignee_id }]).all?{|x| x[:status] == 'resolvido'} and Date.today.end_of_month == Date.today], descricao: 'Finalizar o mês com saldo positivo(mais chamados fechados que abertos)', chave: 'sucesso' },
       { image: 'medal.png', name: 'Medalha por Persistência', regra: %q[Ticket.find_by_sql(["SELECT count(*) as qtd
                                                                                               FROM gamedesk.tickets t
                                                                                               WHERE status = 'solved'
