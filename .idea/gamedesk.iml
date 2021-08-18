@@ -54,7 +54,6 @@
     <orderEntry type="library" scope="PROVIDED" name="bootstrap (v4.6.0, rbenv: 2.5.9) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="breadcrumbs_on_rails (v4.1.0, rbenv: 2.5.9) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="builder (v3.2.4, rbenv: 2.5.9) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="bundler (v2.2.25, rbenv: 2.5.9) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="byebug (v11.1.3, rbenv: 2.5.9) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="cancancan (v3.3.0, rbenv: 2.5.9) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="capybara (v3.35.3, rbenv: 2.5.9) [gem]" level="application" />
@@ -88,6 +87,7 @@
     <orderEntry type="library" scope="PROVIDED" name="io-like (v0.3.1, rbenv: 2.5.9) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="jbuilder (v2.11.2, rbenv: 2.5.9) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="jmespath (v1.4.0, rbenv: 2.5.9) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="jquery-datatables (v1.10.20, rbenv: 2.5.9) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="jquery-rails (v4.4.0, rbenv: 2.5.9) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="libv8 (v3.16.14.19, rbenv: 2.5.9) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="libv8-node (v15.14.0.1, rbenv: 2.5.9) [gem]" level="application" />
@@ -183,6 +183,7 @@
         <option value="integration_test" />
         <option value="jbuilder" />
         <option value="job" />
+        <option value="jquery:datatables:install" />
         <option value="js:assets" />
         <option value="mailer" />
         <option value="migration" />
@@ -224,6 +225,7 @@
         <option value="integration_test" />
         <option value="jbuilder" />
         <option value="job" />
+        <option value="jquery:datatables:install" />
         <option value="js:assets" />
         <option value="mailer" />
         <option value="migration" />
@@ -386,6 +388,11 @@
           <RakeTaskImpl id="dev">
             <subtasks>
               <RakeTaskImpl description="Toggle development mode caching on/off" fullCommand="dev:cache" id="cache" />
+            </subtasks>
+          </RakeTaskImpl>
+          <RakeTaskImpl id="executa_popula_tabelas">
+            <subtasks>
+              <RakeTaskImpl description="a new task to be executed" fullCommand="executa_popula_tabelas:execute" id="execute" />
             </subtasks>
           </RakeTaskImpl>
           <RakeTaskImpl description="Print out all defined initializers in the order they are invoked by Rails" fullCommand="initializers" id="initializers" />

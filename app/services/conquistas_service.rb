@@ -5,14 +5,16 @@ class ConquistasService
 
   def execute
     object_yield = Yield.find_by(assignee_id: @assignee_id)
-    Achievement.where(status: 1).each do |achievement|
-      regra = achievement.regra
-      begin
-        if eval(regra)
-          UserAchievement.find_or_create_by(assignee_id: @new_ticket&.assignee_id.to_i, achievement_id: achievement.id)
+    if object_yield.present?
+      Achievement.where(status: 1).each do |achievement|
+        regra = achievement.regra
+        begin
+          if eval(regra)
+            UserAchievement.find_or_create_by(assignee_id: @assignee_id.to_i, achievement_id: achievement.id)
+          end
+        rescue => error
+          nil
         end
-      rescue => error
-        nil
       end
     end
   end

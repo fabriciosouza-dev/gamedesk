@@ -45,16 +45,55 @@ namespace :popula_conquistas do
                                         AND assignee_id = :assignee_id",
                                       { assignee_id: @assignee_id }]).count > 0], descricao: 'Fechou seu primeiro chamado de alta prioridade(alto/urgente)', chave: 'um_passo_cada_vez' },
       { image: 'rocket.png', name: 'Foguete não tem Ré', regra: 'a definir', descricao: 'Jogador resolveu 10 chamados de alta prioridade(alto/urgente) no mesmo dia', chave: 'foguete_nao_tem_re' },
-      { image: 'ninja.png', name: "I'm NINJA", regra: 'a definir', descricao: 'Jogador resolveu 20 chamados de alta prioridade(alto/urgente) no mesmo dia', chave: 'im_ninja' },
+      { image: 'ninja.png', name: "I'm NINJA", regra: %q[Ticket.find_by_sql(["SELECT date_trunc('day', closed_at),
+                                                                               count(*)
+                                                                               FROM gamedesk.tickets t
+                                                                               WHERE status = 'solved'
+                                                                               and priority in ('high','urgent')
+                                                                               AND assignee_id = :assignee_id
+                                                                               group by 1",
+                                      { assignee_id: @assignee_id }]).map { |x| x[:count] >= 5 }.any?], descricao: 'Jogador resolveu 5 chamados de alta prioridade(alto/urgente) no mesmo dia', chave: 'im_ninja' },
       { image: 'role-model.png', name: 'My Man', regra: 'a definir', descricao: 'Fechou ao menos dois chamados por dia por 5 dias consecutivos', chave: 'my_man' },
-      { image: 'siren.png', name: 'URGENTE!!!', regra: 'a definir', descricao: 'Jogador fechou o mês com mais chamados urgentes que os demais jogadores' },
+      { image: 'siren.png', name: 'URGENTE!!!', regra: %q[Ticket.find_by_sql(["with table_1 as (SELECT
+                                                                                                 t.assignee_id,count(*)
+                                                                                                 FROM gamedesk.tickets t
+                                                                                                 WHERE t.status = 'solved'
+                                                                                                 and t.priority in ('high','urgent')
+                                                                                                 and closed_at >= date_trunc('month', CURRENT_DATE)
+                                                                                                   group by t.assignee_id order by count desc),
+                                                                                    table_2 as (select count
+                                                                                                FROM table_1)
+                                                                                        select * from table_1
+                                                                                        where count = (select max(count) from table_2
+                                                                                        where assignee_id = :assignee_id)",
+                                      { assignee_id: @assignee_id }]).present? and Date.today.end_of_month == Date.today], descricao: 'Jogador fechou o mês com mais chamados de alta prioridade(alto/urgente) que os demais jogadores', chave: 'urgente' },
       { image: 'speed.png', name: 'Atrasado', regra: 'a definir', descricao: 'Atrasou 15 ou mais dias na entrega de um chamado', chave: 'atrasado' },
       { image: 'success.png', name: 'Sucesso', regra: 'a definir', descricao: 'Finalizar o mês com saldo positivo(mais chamados fechados que abertos)', chave: 'sucesso' },
-      { image: 'medal.png', name: 'Medalha por Persistência', regra: 'a definir', descricao: 'Fechou ao todo 100 chamados', chave: 'medalha_por_persistencia' },
-      { image: 'willpower.png', name: 'We have the POWER', regra: 'a definir', descricao: 'Fechou ao todo 250 chamados', chave: 'we_have_power' },
-      { image: 'trophy.png', name: 'Troféu', regra: 'a definir', descricao: 'Fechou ao todo 500 chamados', chave: 'trofeu' },
-      { image: 'star.png', name: 'Aqui sua Estrela', regra: 'a definir', descricao: 'Fechou ao todo 1000 chamados', chave: 'aqui_sua_estrela' },
-      { image: 'wreath.png', name: 'Aqui sua Guirlanda', regra: 'a definir', descricao: 'Fechou ao todo 1500 chamados', chave: 'aqui_sua_guirlanda' },
+      { image: 'medal.png', name: 'Medalha por Persistência', regra: %q[Ticket.find_by_sql(["SELECT count(*) as qtd
+                                                                                              FROM gamedesk.tickets t
+                                                                                              WHERE status = 'solved'
+                                                                                              AND assignee_id = :assignee_id",
+                                      { assignee_id: @assignee_id }]).first[:qtd] >= 100], descricao: 'Fechou ao todo 100 chamados', chave: 'medalha_por_persistencia' },
+      { image: 'willpower.png', name: 'We have the POWER', regra: %q[Ticket.find_by_sql(["SELECT count(*) as qtd
+                                                                                              FROM gamedesk.tickets t
+                                                                                              WHERE status = 'solved'
+                                                                                              AND assignee_id = :assignee_id",
+                                      { assignee_id: @assignee_id }]).first[:qtd] >= 250], descricao: 'Fechou ao todo 250 chamados', chave: 'we_have_power' },
+      { image: 'trophy.png', name: 'Troféu', regra: %q[Ticket.find_by_sql(["SELECT count(*) as qtd
+                                                                                              FROM gamedesk.tickets t
+                                                                                              WHERE status = 'solved'
+                                                                                              AND assignee_id = :assignee_id",
+                                      { assignee_id: @assignee_id }]).first[:qtd] >= 500], descricao: 'Fechou ao todo 500 chamados', chave: 'trofeu' },
+      { image: 'star.png', name: 'Aqui sua Estrela', regra: %q[Ticket.find_by_sql(["SELECT count(*) as qtd
+                                                                                              FROM gamedesk.tickets t
+                                                                                              WHERE status = 'solved'
+                                                                                              AND assignee_id = :assignee_id",
+                                      { assignee_id: @assignee_id }]).first[:qtd] >= 1000], descricao: 'Fechou ao todo 1000 chamados', chave: 'aqui_sua_estrela' },
+      { image: 'wreath.png', name: 'Aqui sua Guirlanda', regra: %q[Ticket.find_by_sql(["SELECT count(*) as qtd
+                                                                                              FROM gamedesk.tickets t
+                                                                                              WHERE status = 'solved'
+                                                                                              AND assignee_id = :assignee_id",
+                                      { assignee_id: @assignee_id }]).first[:qtd] >= 1500], descricao: 'Fechou ao todo 1500 chamados', chave: 'aqui_sua_guirlanda' },
     ]
   end
 end

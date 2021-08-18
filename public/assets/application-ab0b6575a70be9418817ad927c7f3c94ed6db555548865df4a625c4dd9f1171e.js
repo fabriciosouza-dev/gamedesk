@@ -85910,6 +85910,24 @@ external_root_jQuery_commonjs2_jquery_commonjs_jquery_amd_jquery_default.a.summe
 })(jQuery);
 "use strict";
 
+// ChartJS
+// if(window.Chart) {
+  // Chart.defaults.global.defaultFontSize = 12;
+  // Chart.defaults.global.defaultFontStyle = 500;
+  // Chart.defaults.global.defaultFontColor = "#999";
+  // Chart.defaults.global.tooltips.backgroundColor = "#000";
+  // Chart.defaults.global.tooltips.bodyFontColor = "rgba(255,255,255,.7)";
+  // Chart.defaults.global.tooltips.titleMarginBottom = 10;
+  // Chart.defaults.global.tooltips.titleFontSize = 14;
+  // Chart.defaults.global.tooltips.titleFontFamily = "'Nunito', 'Segoe UI', 'Arial'";
+  // Chart.defaults.global.tooltips.titleFontColor = '#fff';
+  // Chart.defaults.global.tooltips.xPadding = 15;
+  // Chart.defaults.global.tooltips.yPadding = 15;
+  // Chart.defaults.global.tooltips.displayColors = false;
+  // Chart.defaults.global.tooltips.intersect = false;
+  // Chart.defaults.global.tooltips.mode = 'nearest';
+// }
+
 // DropzoneJS
 if(window.Dropzone) {
   Dropzone.autoDiscover = false;
@@ -85945,7 +85963,14 @@ $('[data-confirm]').each(function() {
 });
 
 // Global
-$(document).on('turbolinks:load', function () {
+$( document ).on('turbolinks:load', function() {
+  $('.dataTable').DataTable({
+    "language": {
+      "url": "//cdn.datatables.net/plug-ins/1.10.25/i18n/Portuguese-Brasil.json"
+    },
+    "bDestroy": true
+  });
+
   let sidebar_nicescroll_opts = {
     cursoropacitymin: 0,
     cursoropacitymax: .8,
@@ -86517,14 +86542,14 @@ $(document).on('ready', function () {
     });
 })
 
-$(document).on('turbolinks:load', function () {
-    $('.dataTable').DataTable({
-            "language": {
-                "url": "//cdn.datatables.net/plug-ins/1.10.25/i18n/Portuguese-Brasil.json"
-            }
-        }
-    )
-})
+// $(document).on('turbolinks:load', function () {
+//     $('.dataTable').DataTable({
+//             "language": {
+//                 "url": "//cdn.datatables.net/plug-ins/1.10.25/i18n/Portuguese-Brasil.json"
+//             }
+//         }
+//     )
+// })
 
 
 ;

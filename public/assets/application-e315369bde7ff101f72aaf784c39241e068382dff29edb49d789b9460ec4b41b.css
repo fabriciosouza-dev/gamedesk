@@ -19662,7 +19662,7 @@ table.dataTable td {
 
 /* line 10, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_misc.scss */
 a {
-  color: #6777ef;
+  color: #464646;
   font-weight: 500;
   transition: all .5s;
   -webkit-transition: all .5s;
@@ -19680,7 +19680,7 @@ a:not(.btn-social-icon):not(.btn-social):not(.page-link) .fab {
 
 /* line 26, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_misc.scss */
 .bg-primary {
-  background-color: #6777ef !important;
+  background-color: #464646 !important;
 }
 
 /* line 30, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_misc.scss */
@@ -19690,22 +19690,22 @@ a:not(.btn-social-icon):not(.btn-social):not(.page-link) .fab {
 
 /* line 34, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_misc.scss */
 .bg-success {
-  background-color: #63ed7a !important;
+  background-color: #08A045 !important;
 }
 
 /* line 38, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_misc.scss */
 .bg-info {
-  background-color: #3abaf4 !important;
+  background-color: #7678ED !important;
 }
 
 /* line 42, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_misc.scss */
 .bg-warning {
-  background-color: #ffa426 !important;
+  background-color: #EB870E !important;
 }
 
 /* line 46, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_misc.scss */
 .bg-danger {
-  background-color: #fc544b !important;
+  background-color: #DB162F !important;
 }
 
 /* line 50, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_misc.scss */
@@ -19720,7 +19720,7 @@ a:not(.btn-social-icon):not(.btn-social):not(.page-link) .fab {
 
 /* line 58, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_misc.scss */
 .text-primary, .text-primary-all *, .text-primary-all *:before, .text-primary-all *:after {
-  color: #6777ef !important;
+  color: #464646 !important;
 }
 
 /* line 62, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_misc.scss */
@@ -19730,22 +19730,22 @@ a:not(.btn-social-icon):not(.btn-social):not(.page-link) .fab {
 
 /* line 66, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_misc.scss */
 .text-success, .text-success-all *, .text-success-all *:before, .text-success-all *:after {
-  color: #63ed7a !important;
+  color: #08A045 !important;
 }
 
 /* line 70, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_misc.scss */
 .text-info, .text-info-all *, .text-info-all *:before, .text-info-all *:after {
-  color: #3abaf4 !important;
+  color: #7678ED !important;
 }
 
 /* line 74, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_misc.scss */
 .text-warning, .text-warning-all *, .text-warning-all *:before, .text-warning-all *:after {
-  color: #ffa426 !important;
+  color: #EB870E !important;
 }
 
 /* line 78, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_misc.scss */
 .text-danger, .text-danger-all *, .text-danger-all *:before, .text-danger-all *:after {
-  color: #fc544b !important;
+  color: #DB162F !important;
 }
 
 /* line 82, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_misc.scss */
@@ -19951,7 +19951,7 @@ select.form-control:not([size]):not([multiple]) {
 
 /* line 108, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_form.scss */
 .input-group-append [class*="btn-outline-"] {
-  background-color: #fdfdff;
+  background-color: #999999;
 }
 
 /* line 112, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_form.scss */
@@ -19963,7 +19963,7 @@ select.form-control:not([size]):not([multiple]) {
 /* line 117, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_form.scss */
 .custom-radio .custom-control-input:checked ~ .custom-control-label::before,
 .custom-control-input:checked ~ .custom-control-label::before {
-  background-color: #6777ef !important;
+  background-color: #464646 !important;
 }
 
 /* line 125, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_form.scss */
@@ -19987,7 +19987,7 @@ select.form-control:not([size]):not([multiple]) {
 /* line 140, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_form.scss */
 .custom-file-input:focus + .custom-file-label {
   box-shadow: none;
-  border-color: #6777ef;
+  border-color: #464646;
 }
 
 /* line 143, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_form.scss */
@@ -20067,7 +20067,7 @@ select.form-control:not([size]):not([multiple]) {
 
 /* line 210, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_form.scss */
 .selectgroup-input:focus + .selectgroup-button, .selectgroup-input:checked + .selectgroup-button {
-  background-color: #6777ef;
+  background-color: #464646;
   color: #fff;
   z-index: 1;
 }
@@ -20148,7 +20148,7 @@ select.form-control:not([size]):not([multiple]) {
 
 /* line 287, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_form.scss */
 .custom-switch-input:checked ~ .custom-switch-indicator {
-  background: #6777ef;
+  background: #464646;
 }
 
 /* line 289, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_form.scss */
@@ -20158,7 +20158,7 @@ select.form-control:not([size]):not([multiple]) {
 
 /* line 293, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_form.scss */
 .custom-switch-input:focus ~ .custom-switch-indicator {
-  border-color: #6777ef;
+  border-color: #464646;
 }
 
 /* line 298, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_form.scss */
@@ -20200,7 +20200,7 @@ select.form-control:not([size]):not([multiple]) {
 
 /* line 330, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_form.scss */
 .imagecheck-input:focus ~ .imagecheck-figure {
-  border-color: #6777ef;
+  border-color: #464646;
 }
 
 /* line 333, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_form.scss */
@@ -20222,7 +20222,7 @@ select.form-control:not([size]):not([multiple]) {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  background: #6777ef url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E") no-repeat center center/50% 50%;
+  background: #464646 url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E") no-repeat center center/50% 50%;
   color: #fff;
   z-index: 1;
   border-radius: 3px;
@@ -20356,7 +20356,7 @@ select.form-control:not([size]):not([multiple]) {
 
 /* line 20, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_list.scss */
 .list-group-item.active {
-  background-color: #6777ef;
+  background-color: #464646;
 }
 
 /* line 23, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_list.scss */
@@ -20366,7 +20366,7 @@ select.form-control:not([size]):not([multiple]) {
 
 /* line 28, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_list.scss */
 .list-group-item-primary {
-  background-color: #6777ef;
+  background-color: #464646;
   color: #fff;
 }
 
@@ -20378,25 +20378,25 @@ select.form-control:not([size]):not([multiple]) {
 
 /* line 38, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_list.scss */
 .list-group-item-success {
-  background-color: #63ed7a;
+  background-color: #08A045;
   color: #fff;
 }
 
 /* line 43, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_list.scss */
 .list-group-item-danger {
-  background-color: #fc544b;
+  background-color: #DB162F;
   color: #fff;
 }
 
 /* line 48, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_list.scss */
 .list-group-item-warning {
-  background-color: #ffa426;
+  background-color: #EB870E;
   color: #fff;
 }
 
 /* line 53, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_list.scss */
 .list-group-item-info {
-  background-color: #3abaf4;
+  background-color: #7678ED;
   color: #fff;
 }
 
@@ -20467,7 +20467,7 @@ select.form-control:not([size]):not([multiple]) {
 
 /* line 34, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_alert.scss */
 .alert.alert-primary {
-  background-color: #6777ef;
+  background-color: #464646;
 }
 
 /* line 37, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_alert.scss */
@@ -20477,22 +20477,22 @@ select.form-control:not([size]):not([multiple]) {
 
 /* line 40, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_alert.scss */
 .alert.alert-success {
-  background-color: #63ed7a;
+  background-color: #08A045;
 }
 
 /* line 43, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_alert.scss */
 .alert.alert-info {
-  background-color: #3abaf4;
+  background-color: #7678ED;
 }
 
 /* line 46, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_alert.scss */
 .alert.alert-warning {
-  background-color: #ffa426;
+  background-color: #EB870E;
 }
 
 /* line 49, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_alert.scss */
 .alert.alert-danger {
-  background-color: #fc544b;
+  background-color: #DB162F;
 }
 
 /* line 52, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_alert.scss */
@@ -20600,7 +20600,7 @@ select.form-control:not([size]):not([multiple]) {
 .card .card-header h4 {
   font-size: 16px;
   line-height: 28px;
-  color: #6777ef;
+  color: #464646;
   padding-right: 10px;
   margin-bottom: 0;
 }
@@ -20623,8 +20623,8 @@ select.form-control:not([size]):not([multiple]) {
 /* line 69, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_card.scss */
 .card .card-header h4 + .card-header-action .btn.active,
 .card .card-header h4 + .card-header-form .btn.active {
-  box-shadow: 0 2px 6px #acb5f6;
-  background-color: #6777ef;
+  box-shadow: 0 2px 6px #6c6c6c;
+  background-color: #464646;
   color: #fff;
 }
 
@@ -20728,7 +20728,7 @@ select.form-control:not([size]):not([multiple]) {
 
 /* line 149, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_card.scss */
 .card.card-primary {
-  border-top: 2px solid #6777ef;
+  border-top: 2px solid #464646;
 }
 
 /* line 152, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_card.scss */
@@ -20738,22 +20738,22 @@ select.form-control:not([size]):not([multiple]) {
 
 /* line 155, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_card.scss */
 .card.card-success {
-  border-top: 2px solid #63ed7a;
+  border-top: 2px solid #08A045;
 }
 
 /* line 158, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_card.scss */
 .card.card-danger {
-  border-top: 2px solid #fc544b;
+  border-top: 2px solid #DB162F;
 }
 
 /* line 161, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_card.scss */
 .card.card-warning {
-  border-top: 2px solid #ffa426;
+  border-top: 2px solid #EB870E;
 }
 
 /* line 164, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_card.scss */
 .card.card-info {
-  border-top: 2px solid #3abaf4;
+  border-top: 2px solid #7678ED;
 }
 
 /* line 167, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_card.scss */
@@ -20764,7 +20764,7 @@ select.form-control:not([size]):not([multiple]) {
 /* line 171, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_card.scss */
 .card.card-hero .card-header {
   padding: 40px;
-  background-image: linear-gradient(to bottom, #6777ef, #95a0f4);
+  background-image: linear-gradient(to bottom, #464646, #606060);
   color: #fff;
   overflow: hidden;
   height: auto;
@@ -20788,7 +20788,7 @@ select.form-control:not([size]):not([multiple]) {
 /* line 188, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_card.scss */
 .card.card-hero .card-header .card-icon {
   float: right;
-  color: #8c98f3;
+  color: #5a5a5a;
   margin: -60px;
 }
 
@@ -21229,7 +21229,7 @@ table tr:hover .table-links {
 /* 3.9 Nav */
 /* line 1, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_nav.scss */
 .nav-tabs .nav-item .nav-link {
-  color: #6777ef;
+  color: #464646;
 }
 
 /* line 3, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_nav.scss */
@@ -21253,26 +21253,26 @@ table tr:hover .table-links {
 /* line 20, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_nav.scss */
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
   color: #fff;
-  background-color: #6777ef;
+  background-color: #464646;
 }
 
 /* line 24, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_nav.scss */
 .nav-pills .nav-item .nav-link {
-  color: #6777ef;
+  color: #464646;
   padding-left: 15px !important;
   padding-right: 15px !important;
 }
 
 /* line 28, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_nav.scss */
 .nav-pills .nav-item .nav-link:hover {
-  background-color: #f6f7fe;
+  background-color: #959595;
 }
 
 /* line 31, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_nav.scss */
 .nav-pills .nav-item .nav-link.active {
-  box-shadow: 0 2px 6px #acb5f6;
+  box-shadow: 0 2px 6px #6c6c6c;
   color: #fff;
-  background-color: #6777ef;
+  background-color: #464646;
 }
 
 /* line 36, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_nav.scss */
@@ -21290,35 +21290,35 @@ table tr:hover .table-links {
 /* 3.10 Pagination */
 /* line 2, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_pagination.scss */
 .page-item .page-link {
-  color: #6777ef;
+  color: #464646;
   border-radius: 3px;
   margin: 0 3px;
 }
 
 /* line 7, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_pagination.scss */
 .page-item.active .page-link {
-  background-color: #6777ef;
-  border-color: #6777ef;
+  background-color: #464646;
+  border-color: #464646;
 }
 
 /* line 11, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_pagination.scss */
 .page-item.disabled .page-link {
   border-color: transparent;
-  background-color: #f9fafe;
-  color: #6777ef;
+  background-color: #979797;
+  color: #464646;
   opacity: .6;
 }
 
 /* line 19, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_pagination.scss */
 .page-link {
   border-color: transparent;
-  background-color: #f9fafe;
+  background-color: #979797;
   font-weight: 600;
 }
 
 /* line 23, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_pagination.scss */
 .page-link:hover {
-  background-color: #6777ef;
+  background-color: #464646;
   color: #fff;
   border-color: transparent;
 }
@@ -21351,7 +21351,7 @@ table tr:hover .table-links {
 
 /* line 17, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_badge.scss */
 .badge.badge-primary {
-  background-color: #6777ef;
+  background-color: #464646;
 }
 
 /* line 20, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_badge.scss */
@@ -21361,17 +21361,17 @@ table tr:hover .table-links {
 
 /* line 23, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_badge.scss */
 .badge.badge-success {
-  background-color: #63ed7a;
+  background-color: #08A045;
 }
 
 /* line 26, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_badge.scss */
 .badge.badge-info {
-  background-color: #3abaf4;
+  background-color: #7678ED;
 }
 
 /* line 29, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_badge.scss */
 .badge.badge-danger {
-  background-color: #fc544b;
+  background-color: #DB162F;
 }
 
 /* line 32, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_badge.scss */
@@ -21606,40 +21606,40 @@ h6 .badge {
 
 /* line 138, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_button.scss */
 .btn-success, .btn-success.disabled {
-  box-shadow: 0 2px 6px #a8f5b4;
-  background-color: #63ed7a;
-  border-color: #63ed7a;
+  box-shadow: 0 2px 6px #0ce964;
+  background-color: #08A045;
+  border-color: #08A045;
   color: #fff;
 }
 
 /* line 143, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_button.scss */
 .btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success.disabled:hover, .btn-success.disabled:focus, .btn-success.disabled:active {
-  background-color: #4cea67 !important;
+  background-color: #07883b !important;
   color: #fff !important;
 }
 
 /* line 150, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_button.scss */
 .btn-outline-success:hover, .btn-outline-success:focus, .btn-outline-success:active, .btn-outline-success.disabled:hover, .btn-outline-success.disabled:focus, .btn-outline-success.disabled:active {
-  background-color: #63ed7a !important;
+  background-color: #08A045 !important;
   color: #fff !important;
 }
 
 /* line 156, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_button.scss */
 .btn-danger, .btn-danger.disabled {
-  box-shadow: 0 2px 6px #fd9b96;
-  background-color: #fc544b;
-  border-color: #fc544b;
+  box-shadow: 0 2px 6px #ed5064;
+  background-color: #DB162F;
+  border-color: #DB162F;
   color: #fff;
 }
 
 /* line 161, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_button.scss */
 .btn-danger:hover, .btn-danger:focus, .btn-danger:active, .btn-danger.disabled:hover, .btn-danger.disabled:focus, .btn-danger.disabled:active {
-  background-color: #fb160a !important;
+  background-color: #9f1022 !important;
 }
 
 /* line 167, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_button.scss */
 .btn-outline-danger:hover, .btn-outline-danger:focus, .btn-outline-danger:active, .btn-outline-danger.disabled:hover, .btn-outline-danger.disabled:focus, .btn-outline-danger.disabled:active {
-  background-color: #fb160a !important;
+  background-color: #9f1022 !important;
   color: #fff !important;
 }
 
@@ -21689,74 +21689,74 @@ h6 .badge {
 
 /* line 209, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_button.scss */
 .btn-warning, .btn-warning.disabled {
-  box-shadow: 0 2px 6px #ffc473;
-  background-color: #ffa426;
-  border-color: #ffa426;
+  box-shadow: 0 2px 6px #f5ab51;
+  background-color: #EB870E;
+  border-color: #EB870E;
   color: #fff;
 }
 
 /* line 214, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_button.scss */
 .btn-warning:hover, .btn-warning:focus, .btn-warning:active, .btn-warning.disabled:hover, .btn-warning.disabled:focus, .btn-warning.disabled:active {
-  background-color: #ff990d !important;
+  background-color: #d3790d !important;
   color: #fff !important;
 }
 
 /* line 221, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_button.scss */
 .btn-outline-warning:hover, .btn-outline-warning:focus, .btn-outline-warning:active, .btn-outline-warning.disabled:hover, .btn-outline-warning.disabled:focus, .btn-outline-warning.disabled:active {
-  background-color: #ffa426 !important;
+  background-color: #EB870E !important;
   color: #fff !important;
 }
 
 /* line 227, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_button.scss */
 .btn-info, .btn-info.disabled {
-  box-shadow: 0 2px 6px #82d3f8;
-  background-color: #3abaf4;
-  border-color: #3abaf4;
+  box-shadow: 0 2px 6px #babbf6;
+  background-color: #7678ED;
+  border-color: #7678ED;
   color: #fff;
 }
 
 /* line 232, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_button.scss */
 .btn-info:hover, .btn-info:focus, .btn-info:active, .btn-info.disabled:hover, .btn-info.disabled:focus, .btn-info.disabled:active {
-  background-color: #0da8ee !important;
+  background-color: #494ce7 !important;
 }
 
 /* line 238, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_button.scss */
 .btn-outline-info:hover, .btn-outline-info:focus, .btn-outline-info:active, .btn-outline-info.disabled:hover, .btn-outline-info.disabled:focus, .btn-outline-info.disabled:active {
-  background-color: #0da8ee !important;
+  background-color: #494ce7 !important;
   color: #fff !important;
 }
 
 /* line 244, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_button.scss */
 .btn-primary, .btn-primary.disabled {
-  box-shadow: 0 2px 6px #acb5f6;
-  background-color: #6777ef;
-  border-color: #6777ef;
+  box-shadow: 0 2px 6px #6c6c6c;
+  background-color: #464646;
+  border-color: #464646;
 }
 
 /* line 248, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_button.scss */
 .btn-primary:focus, .btn-primary.disabled:focus {
-  background-color: #394eea !important;
+  background-color: #2d2d2d !important;
 }
 
 /* line 250, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_button.scss */
 .btn-primary:focus:active, .btn-primary.disabled:focus:active {
-  background-color: #394eea !important;
+  background-color: #2d2d2d !important;
 }
 
 /* line 254, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_button.scss */
 .btn-primary:active, .btn-primary:hover, .btn-primary.disabled:active, .btn-primary.disabled:hover {
-  background-color: #394eea !important;
+  background-color: #2d2d2d !important;
 }
 
 /* line 259, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_button.scss */
 .btn-outline-primary, .btn-outline-primary.disabled {
-  border-color: #6777ef;
-  color: #6777ef;
+  border-color: #464646;
+  color: #464646;
 }
 
 /* line 262, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_button.scss */
 .btn-outline-primary:hover, .btn-outline-primary:focus, .btn-outline-primary:active, .btn-outline-primary.disabled:hover, .btn-outline-primary.disabled:focus, .btn-outline-primary.disabled:active {
-  background-color: #6777ef !important;
+  background-color: #464646 !important;
   color: #fff;
 }
 
@@ -21769,7 +21769,7 @@ h6 .badge {
 /* line 271, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_button.scss */
 .btn-outline-white:hover, .btn-outline-white:focus, .btn-outline-white:active, .btn-outline-white.disabled:hover, .btn-outline-white.disabled:focus, .btn-outline-white.disabled:active {
   background-color: #fff;
-  color: #6777ef;
+  color: #464646;
 }
 
 /* line 277, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_button.scss */
@@ -21818,7 +21818,7 @@ h6 .badge {
 
 /* line 314, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_button.scss */
 .btn-group .btn.active {
-  background-color: #6777ef;
+  background-color: #464646;
   color: #fff;
 }
 
@@ -21837,7 +21837,7 @@ h6 .badge {
 /* line 2, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_media.scss */
 .media .media-right {
   float: right;
-  color: #6777ef;
+  color: #464646;
   font-weight: 600;
   font-size: 16px;
 }
@@ -21984,8 +21984,8 @@ h6 .badge {
 
 /* line 22, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_accordion.scss */
 .accordion .accordion-header[aria-expanded="true"] {
-  box-shadow: 0 2px 6px #acb5f6;
-  background-color: #6777ef;
+  box-shadow: 0 2px 6px #6c6c6c;
+  background-color: #464646;
   color: #fff;
 }
 
@@ -22071,8 +22071,8 @@ h6 .badge {
 
 /* line 8, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_navbar.scss */
 .navbar.active {
-  background-color: #6777ef;
-  box-shadow: rgba(103, 119, 239, 0.2) rgba(0, 0, 0, 0.03);
+  background-color: #464646;
+  box-shadow: rgba(70, 70, 70, 0.2) rgba(0, 0, 0, 0.03);
 }
 
 /* line 14, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_navbar.scss */
@@ -22083,7 +22083,7 @@ h6 .badge {
   left: 0;
   width: 100%;
   height: 115px;
-  background-color: #6777ef;
+  background-color: #464646;
   z-index: -1;
 }
 
@@ -22207,7 +22207,7 @@ h6 .badge {
 
 /* line 115, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_navbar.scss */
 .navbar .form-inline .search-result .search-item a:hover {
-  background-color: #f1f3fe;
+  background-color: #939393;
 }
 
 /* line 118, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_navbar.scss */
@@ -22405,11 +22405,11 @@ h6 .badge {
   /* line 278, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_navbar.scss */
   .nav-collapse .navbar-nav .nav-item .nav-link:hover {
     background-color: #fcfcfd;
-    color: #6777ef;
+    color: #464646;
   }
   /* line 285, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_navbar.scss */
   .nav-collapse .navbar-nav .nav-item:focus > a, .nav-collapse .navbar-nav .nav-item.active > a {
-    background-color: #6777ef;
+    background-color: #464646;
     color: #fff;
   }
   /* line 293, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_navbar.scss */
@@ -22485,7 +22485,7 @@ a.dropdown-item {
 
 /* line 40, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_dropdown.scss */
 a.dropdown-item:focus, a.dropdown-item:active, a.dropdown-item.active {
-  background-color: #6777ef;
+  background-color: #464646;
   color: #fff !important;
 }
 
@@ -22565,7 +22565,7 @@ a.dropdown-item:focus, a.dropdown-item:active, a.dropdown-item.active {
 
 /* line 99, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_dropdown.scss */
 .dropdown-list .dropdown-item:focus {
-  background-color: #6777ef;
+  background-color: #464646;
 }
 
 /* line 101, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_dropdown.scss */
@@ -22691,7 +22691,7 @@ a.dropdown-item:focus, a.dropdown-item:active, a.dropdown-item.active {
 
 /* line 193, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_dropdown.scss */
 .dropdown-flag .dropdown-item.active {
-  background-color: #6777ef;
+  background-color: #464646;
   color: #fff;
 }
 
@@ -22721,7 +22721,7 @@ a.dropdown-item:focus, a.dropdown-item:active, a.dropdown-item.active {
 /* 3.21 Progress Bar */
 /* line 1, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/override/_progressbar.scss */
 .progress-bar {
-  background-color: #6777ef;
+  background-color: #464646;
 }
 
 /* 3.22 Jumbotron */
@@ -22769,7 +22769,7 @@ body {
 /* line 27, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/theme/_misc.scss */
 a.bb {
   text-decoration: none;
-  border-bottom: 1px solid #6777ef;
+  border-bottom: 1px solid #464646;
   padding-bottom: 1px;
 }
 
@@ -23002,8 +23002,8 @@ pre {
 
 /* line 217, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/theme/_misc.scss */
 .circle-step .circle.circle-primary {
-  border-color: #6777ef;
-  color: #6777ef;
+  border-color: #464646;
+  color: #464646;
 }
 
 /* line 224, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/theme/_misc.scss */
@@ -23026,7 +23026,7 @@ pre {
 
 /* line 237, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/theme/_misc.scss */
 .shadow-primary {
-  box-shadow: 0 2px 6px #acb5f6;
+  box-shadow: 0 2px 6px #6c6c6c;
 }
 
 /* line 241, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/theme/_misc.scss */
@@ -23036,22 +23036,22 @@ pre {
 
 /* line 245, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/theme/_misc.scss */
 .shadow-success {
-  box-shadow: 0 2px 6px #a8f5b4;
+  box-shadow: 0 2px 6px #0ce964;
 }
 
 /* line 249, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/theme/_misc.scss */
 .shadow-warning {
-  box-shadow: 0 2px 6px #ffc473;
+  box-shadow: 0 2px 6px #f5ab51;
 }
 
 /* line 253, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/theme/_misc.scss */
 .shadow-danger {
-  box-shadow: 0 2px 6px #fd9b96;
+  box-shadow: 0 2px 6px #ed5064;
 }
 
 /* line 257, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/theme/_misc.scss */
 .shadow-info {
-  box-shadow: 0 2px 6px #82d3f8;
+  box-shadow: 0 2px 6px #babbf6;
 }
 
 /* line 261, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/theme/_misc.scss */
@@ -23068,7 +23068,7 @@ pre {
 .is-online {
   width: 10px;
   height: 10px;
-  background-color: #63ed7a;
+  background-color: #08A045;
   border-radius: 50%;
   display: inline-block;
 }
@@ -23099,7 +23099,7 @@ pre {
   right: 8px;
   width: 7px;
   height: 7px;
-  background-color: #ffa426;
+  background-color: #EB870E;
   border-radius: 50%;
   -webkit-animation: pulsate 1s ease-out;
           animation: pulsate 1s ease-out;
@@ -23364,7 +23364,7 @@ pre {
 
 /* line 24, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/theme/_section.scss */
 .section .section-header .section-header-back .btn:hover {
-  background-color: #6777ef;
+  background-color: #464646;
   color: #fff;
 }
 
@@ -23405,7 +23405,7 @@ pre {
   border-radius: 5px;
   height: 8px;
   width: 30px;
-  background-color: #6777ef;
+  background-color: #eb870e;
   display: inline-block;
   float: left;
   margin-top: 6px;
@@ -23649,8 +23649,8 @@ body.sidebar-mini .main-sidebar .sidebar-menu > li > a.has-dropdown:after {
 
 /* line 92, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/theme/_layout.scss */
 body.sidebar-mini .main-sidebar .sidebar-menu > li.active > a {
-  box-shadow: 0 4px 8px #acb5f6;
-  background-color: #6777ef;
+  box-shadow: 0 4px 8px #6c6c6c;
+  background-color: #464646;
   color: #fff;
 }
 
@@ -23670,7 +23670,7 @@ body.sidebar-mini .main-sidebar .sidebar-menu > li ul.dropdown-menu li > a:focus
 body.sidebar-mini .main-sidebar .sidebar-menu > li ul.dropdown-menu li.active > a,
 body.sidebar-mini .main-sidebar .sidebar-menu > li ul.dropdown-menu li.active > a:hover {
   color: #fff;
-  background-color: #6777ef !important;
+  background-color: #464646 !important;
 }
 
 /* line 113, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/theme/_layout.scss */
@@ -23777,7 +23777,7 @@ body.layout-2 .main-sidebar .sidebar-menu li a.has-dropdown:after {
 
 /* line 193, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/theme/_layout.scss */
 body.layout-2 .main-sidebar .sidebar-menu li a:hover {
-  color: #6777ef;
+  color: #464646;
   background-color: transparent;
 }
 
@@ -23834,7 +23834,7 @@ body.layout-3 .navbar.navbar-secondary {
 
 /* line 247, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/theme/_layout.scss */
 body.layout-3 .navbar.navbar-secondary .navbar-nav > .nav-item.active > .nav-link {
-  color: #6777ef;
+  color: #464646;
 }
 
 /* line 249, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/theme/_layout.scss */
@@ -23894,7 +23894,7 @@ body.layout-3 .navbar.navbar-secondary .navbar-nav > .nav-item > .nav-link:befor
   right: initial;
   bottom: 0;
   height: 2px;
-  background-color: #6777ef;
+  background-color: #464646;
   transition: all .5s;
 }
 
@@ -23959,7 +23959,7 @@ body.layout-3 .navbar.navbar-secondary .navbar-nav > .nav-item .dropdown-menu .n
 /* line 333, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/theme/_layout.scss */
 body.layout-3 .navbar.navbar-secondary .navbar-nav > .nav-item .dropdown-menu .nav-item.active > .nav-link,
 body.layout-3 .navbar.navbar-secondary .navbar-nav > .nav-item .dropdown-menu .nav-item .nav-link:focus {
-  background-color: #6777ef;
+  background-color: #464646;
   color: #fff;
 }
 
@@ -24085,7 +24085,7 @@ body.layout-3 .main-footer {
 
 /* line 430, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/theme/_layout.scss */
 .main-sidebar .sidebar-menu li.active a {
-  color: #6777ef;
+  color: #464646;
   font-weight: 600;
   background-color: #f8fafb;
 }
@@ -24140,13 +24140,13 @@ body.layout-3 .main-footer {
 
 /* line 473, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/theme/_layout.scss */
 .main-sidebar .sidebar-menu li ul.dropdown-menu li a:hover {
-  color: #6777ef;
+  color: #464646;
   background-color: inherit;
 }
 
 /* line 478, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/theme/_layout.scss */
 .main-sidebar .sidebar-menu li ul.dropdown-menu li.active > a {
-  color: #6777ef;
+  color: #464646;
   font-weight: 600;
 }
 
@@ -24199,18 +24199,18 @@ body.layout-3 .main-footer {
 
 /* line 529, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/theme/_layout.scss */
 body:not(.sidebar-mini) .sidebar-style-1 .sidebar-menu li.active a {
-  background-color: #6777ef;
+  background-color: #464646;
   color: #fff;
 }
 
 /* line 536, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/theme/_layout.scss */
 body:not(.sidebar-mini) .sidebar-style-1 .sidebar-menu li.active ul.dropdown-menu li a {
-  color: #e8ebfd;
+  color: #8d8d8d;
 }
 
 /* line 538, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/theme/_layout.scss */
 body:not(.sidebar-mini) .sidebar-style-1 .sidebar-menu li.active ul.dropdown-menu li a:hover {
-  background-color: #6777ef;
+  background-color: #464646;
   color: #fff;
 }
 
@@ -24235,7 +24235,7 @@ body:not(.sidebar-mini) .sidebar-style-2 .sidebar-menu > li.active > a:before {
   transform: translateY(-50%);
   height: 25px;
   width: 4px;
-  background-color: #6777ef;
+  background-color: #464646;
 }
 
 /* line 582, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/theme/_layout.scss */
@@ -24758,7 +24758,7 @@ body.layout-3 .main-wrapper {
 /* line 16, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/components/_chat.scss */
 .chat-box .chat-content .chat-item.chat-right .chat-details .chat-text {
   text-align: left;
-  background-color: #6777ef;
+  background-color: #464646;
   color: #fff;
 }
 
@@ -24932,23 +24932,23 @@ div.dataTables_wrapper div.dataTables_processing {
 
 /* line 17, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/components/_daterangepicker.scss */
 .ranges li {
-  color: #6777ef;
+  color: #464646;
 }
 
 /* line 19, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/components/_daterangepicker.scss */
 .ranges li:hover, .ranges li.active {
-  background-color: #6777ef;
+  background-color: #464646;
 }
 
 /* line 26, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/components/_daterangepicker.scss */
 .daterangepicker td.active, .daterangepicker td.active:hover {
-  background-color: #6777ef;
+  background-color: #464646;
 }
 
 /* 1.10 Dropzone */
 /* line 1, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/components/_dropzone.scss */
 .dropzone {
-  border: 2px dashed #6777ef;
+  border: 2px dashed #464646;
   min-height: 240px;
   text-align: center;
 }
@@ -25095,7 +25095,7 @@ tr:first-child > td > .fc-day-grid-event {
 
 /* line 76, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/components/_fullcalendar.scss */
 .fc button.fc-state-active {
-  background-color: #6777ef;
+  background-color: #464646;
   color: #fff;
 }
 
@@ -25290,7 +25290,7 @@ tr:first-child > td > .fc-day-grid-event {
   width: 13px;
   height: 13px;
   background-color: #fff;
-  border: 3px solid #6777ef;
+  border: 3px solid #464646;
   border-radius: 50%;
 }
 
@@ -25424,7 +25424,7 @@ tr:first-child > td > .fc-day-grid-event {
 
 /* line 22, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/components/_select2.scss */
 .select2-dropdown {
-  border-color: #e4e6fc !important;
+  border-color: #8b8b8b !important;
 }
 
 /* line 27, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/components/_select2.scss */
@@ -25496,7 +25496,7 @@ tr:first-child > td > .fc-day-grid-event {
 .select2-container--default .select2-selection--multiple .select2-selection__choice,
 .select2-container--default .select2-results__option[aria-selected=true],
 .select2-container--default .select2-results__option--highlighted[aria-selected] {
-  background-color: #6777ef;
+  background-color: #464646;
   color: #fff;
 }
 
@@ -25545,7 +25545,7 @@ tr:first-child > td > .fc-day-grid-event {
 
 /* line 26, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/components/_selectric.scss */
 .selectric-open .selectric {
-  border-color: #6777ef;
+  border-color: #464646;
 }
 
 /* line 30, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/components/_selectric.scss */
@@ -25574,7 +25574,7 @@ tr:first-child > td > .fc-day-grid-event {
 
 /* line 45, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/components/_selectric.scss */
 .selectric-items li.selected, .selectric-items li.highlighted {
-  background-color: #6777ef;
+  background-color: #464646;
   color: #fff;
 }
 
@@ -25774,8 +25774,8 @@ tr:first-child > td > .fc-day-grid-event {
 
 /* line 7, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/components/_sweetalert.scss */
 .swal-button.swal-button--confirm {
-  box-shadow: 0 2px 6px #acb5f6;
-  background-color: #6777ef;
+  box-shadow: 0 2px 6px #6c6c6c;
+  background-color: #464646;
 }
 
 /* line 10, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/components/_sweetalert.scss */
@@ -25814,7 +25814,7 @@ tr:first-child > td > .fc-day-grid-event {
 
 /* line 11, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/components/_tagsinput.scss */
 .bootstrap-tagsinput .tag {
-  background-color: #6777ef;
+  background-color: #464646;
   border-radius: 3px;
   padding: 5px 10px;
 }
@@ -25883,17 +25883,17 @@ tr:first-child > td > .fc-day-grid-event {
 
 /* line 35, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/components/_toast.scss */
 .toast.toast-error {
-  background-color: #fc544b;
+  background-color: #DB162F;
 }
 
 /* line 38, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/components/_toast.scss */
 .toast.toast-warning {
-  background-color: #ffa426;
+  background-color: #EB870E;
 }
 
 /* line 41, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/components/_toast.scss */
 .toast.toast-success {
-  background-color: #63ed7a;
+  background-color: #08A045;
 }
 
 /* line 44, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/components/_toast.scss */
@@ -26041,10 +26041,10 @@ tr:first-child > td > .fc-day-grid-event {
   padding: 10px;
   line-height: 1;
   border-radius: 3px;
-  border: 2px solid #6777ef;
+  border: 2px solid #464646;
   font-size: 10px;
   font-weight: 500;
-  color: #6777ef;
+  color: #464646;
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 10px;
@@ -26207,7 +26207,7 @@ tr:first-child > td > .fc-day-grid-event {
 
 /* line 16, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/components/_product.scss */
 .product-item .product-review {
-  color: #ffa426;
+  color: #EB870E;
   margin-bottom: 3px;
 }
 
@@ -26289,14 +26289,14 @@ tr:first-child > td > .fc-day-grid-event {
 
 /* line 47, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/components/_ticket.scss */
 .tickets .ticket-items .ticket-item:hover .ticket-title {
-  color: #6777ef;
+  color: #464646;
 }
 
 /* line 51, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/components/_ticket.scss */
 .tickets .ticket-items .ticket-item.active {
-  box-shadow: 0 2px 6px #acb5f6;
+  box-shadow: 0 2px 6px #6c6c6c;
   border-radius: 3px;
-  background-color: #6777ef;
+  background-color: #464646;
   border-bottom: none;
 }
 
@@ -26472,7 +26472,7 @@ tr:first-child > td > .fc-day-grid-event {
 
 /* line 9, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/components/_owlcarousel.scss */
 .owl-theme .owl-dots .owl-dot.active span {
-  background-color: #6777ef;
+  background-color: #464646;
 }
 
 /* 1.36 Activities */
@@ -26497,7 +26497,7 @@ tr:first-child > td > .fc-day-grid-event {
   top: 0;
   width: 2px;
   height: 100%;
-  background-color: #6777ef;
+  background-color: #464646;
 }
 
 /* line 18, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/components/_activities.scss */
@@ -26626,7 +26626,7 @@ tr:first-child > td > .fc-day-grid-event {
 /* line 8, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/components/_empty_state.scss */
 .empty-state .empty-state-icon {
   position: relative;
-  background-color: #6777ef;
+  background-color: #464646;
   width: 80px;
   height: 80px;
   line-height: 100px;
@@ -26666,19 +26666,19 @@ tr:first-child > td > .fc-day-grid-event {
 
 /* line 5, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/components/_pricing.scss */
 .pricing.pricing-highlight .pricing-title {
-  background-color: #6777ef;
+  background-color: #464646;
   color: #fff;
 }
 
 /* line 10, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/components/_pricing.scss */
 .pricing.pricing-highlight .pricing-cta a {
-  background-color: #6777ef;
+  background-color: #464646;
   color: #fff;
 }
 
 /* line 13, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/components/_pricing.scss */
 .pricing.pricing-highlight .pricing-cta a:hover {
-  background-color: #394eea !important;
+  background-color: #2d2d2d !important;
 }
 
 /* line 19, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/components/_pricing.scss */
@@ -26693,7 +26693,7 @@ tr:first-child > td > .fc-day-grid-event {
   text-transform: uppercase;
   letter-spacing: 2.5px;
   background-color: #f3f6f8;
-  color: #6777ef;
+  color: #464646;
   border-radius: 0 0 3px 3px;
   display: inline-block;
   padding: 5px 15px;
@@ -26729,7 +26729,7 @@ tr:first-child > td > .fc-day-grid-event {
   line-height: 20px;
   border-radius: 50%;
   text-align: center;
-  background-color: #63ed7a;
+  background-color: #08A045;
   color: #fff;
   margin-right: 10px;
 }
@@ -26826,7 +26826,7 @@ tr:first-child > td > .fc-day-grid-event {
  */
 /* line 5, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/components/_avatar.scss */
 .avatar {
-  background: #6777ef;
+  background: #464646;
   border-radius: 50%;
   color: #e3eaef;
   display: inline-block;
@@ -26910,17 +26910,17 @@ tr:first-child > td > .fc-day-grid-event {
 
 /* line 71, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/components/_avatar.scss */
 .avatar .avatar-presence.online {
-  background: #63ed7a;
+  background: #08A045;
 }
 
 /* line 74, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/components/_avatar.scss */
 .avatar .avatar-presence.busy {
-  background: #fc544b;
+  background: #DB162F;
 }
 
 /* line 77, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/components/_avatar.scss */
 .avatar .avatar-presence.away {
-  background: #ffa426;
+  background: #EB870E;
 }
 
 /* line 81, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/components/_avatar.scss */
@@ -26978,62 +26978,62 @@ tr:first-child > td > .fc-day-grid-event {
 
 /* line 29, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/components/_wizard.scss */
 .wizard-steps .wizard-step.wizard-step-active {
-  box-shadow: 0 2px 6px #acb5f6;
-  background-color: #6777ef;
+  box-shadow: 0 2px 6px #6c6c6c;
+  background-color: #464646;
   color: #fff;
 }
 
 /* line 33, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/components/_wizard.scss */
 .wizard-steps .wizard-step.wizard-step-active:before {
-  background-color: #6777ef;
+  background-color: #464646;
   color: #fff;
 }
 
 /* line 38, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/components/_wizard.scss */
 .wizard-steps .wizard-step.wizard-step-success {
-  background-color: #63ed7a;
+  background-color: #08A045;
   color: #fff;
 }
 
 /* line 41, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/components/_wizard.scss */
 .wizard-steps .wizard-step.wizard-step-success:before {
-  background-color: #63ed7a;
+  background-color: #08A045;
   color: #fff;
 }
 
 /* line 46, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/components/_wizard.scss */
 .wizard-steps .wizard-step.wizard-step-danger {
-  background-color: #fc544b;
+  background-color: #DB162F;
   color: #fff;
 }
 
 /* line 49, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/components/_wizard.scss */
 .wizard-steps .wizard-step.wizard-step-danger:before {
-  background-color: #fc544b;
+  background-color: #DB162F;
   color: #fff;
 }
 
 /* line 54, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/components/_wizard.scss */
 .wizard-steps .wizard-step.wizard-step-warning {
-  background-color: #ffa426;
+  background-color: #EB870E;
   color: #fff;
 }
 
 /* line 57, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/components/_wizard.scss */
 .wizard-steps .wizard-step.wizard-step-warning:before {
-  background-color: #ffa426;
+  background-color: #EB870E;
   color: #fff;
 }
 
 /* line 62, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/components/_wizard.scss */
 .wizard-steps .wizard-step.wizard-step-info {
-  background-color: #3abaf4;
+  background-color: #7678ED;
   color: #fff;
 }
 
 /* line 65, ../../.rbenv/versions/2.5.9/lib/ruby/gems/2.5.0/gems/stisla-rails-0.2.0/vendor/assets/stylesheets/components/_wizard.scss */
 .wizard-steps .wizard-step.wizard-step-info:before {
-  background-color: #3abaf4;
+  background-color: #7678ED;
   color: #fff;
 }
 
