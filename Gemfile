@@ -39,7 +39,11 @@ gem "breadcrumbs_on_rails"
 gem 'mini_magick', '~> 4.8'
 # gem 'bootstrap-sass', '~> 3.4.1'
 gem 'bootstrap', '~> 4.6.0'
+gem "select2-rails"
+gem "nested_form"
 gem 'codemirror-rails'
+gem 'bootstrap-daterangepicker-rails'
+gem "cocoon"
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'font-awesome-sass', '~> 5.5.0'
 gem 'jquery-rails'

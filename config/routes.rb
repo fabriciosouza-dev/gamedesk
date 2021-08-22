@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :yields
+  resources :type_rules, path: :tipo_regras
+  resources :rewards, path: :recompensas
   resources :users, path: :usuarios
   resources :achievements, path: :cadastro_conquistas
   resources :user_achievements, path: :conquistas, only: [:index] do

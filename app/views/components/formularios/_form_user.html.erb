@@ -1,4 +1,5 @@
 <% label_form ||= "" %>
+<% hide_link_back ||= false %>
 <%= form_with(model: object, local: true) do |f| %>
   <div class="row mt-sm-4">
     <div class="col-12 col-md-12 col-lg-6">
@@ -57,9 +58,9 @@
                                  class: "form-control" %>
           </div>
 
-          <div class="align-left-right">
-            <%= link_to 'Back', users_path, class: "btn btn-primary" %>
-            <%= f.submit "Salvar", { class: 'btn btn-warning mr-1' } %>
+          <div class="<%= hide_link_back ? 'float-right' : 'align-left-right' %>">
+            <%= link_to 'Voltar', users_path, class: "btn btn-primary" unless hide_link_back %>
+            <%= f.submit "Salvar", { class: "btn btn-warning mr-1" } %>
           </div>
         </div>
       </div>

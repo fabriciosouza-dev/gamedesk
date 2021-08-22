@@ -6,10 +6,13 @@
 //= require datatables/media/js/jquery.dataTables
 //= require nicescroll/jquery.nicescroll
 //= require moment/moment.js
+//= require daterangepicker
 //= require stisla
 //= require prismjs/prism
 //= require jquery-sparkline/jquery.sparkline
 //= require codemirror
+//= require select2
+//= require jquery_nested_form
 //= require codemirror/modes/xml
 //= require codemirror/modes/htmlmixed
 //= require codemirror/modes/javascript
@@ -22,6 +25,7 @@
 //= require sweetalert/dist/sweetalert.min
 //= require izitoast/dist/js/iziToast
 //= require jquery-pwstrength/jquery.pwstrength
+//= require cocoon
 //= require scripts
 //= require custom
 //= require activestorage
