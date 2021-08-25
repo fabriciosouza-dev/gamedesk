@@ -37,7 +37,7 @@
                     <% end %>
                   </td>
                   <td><%= ticket.subject %></td>
-                  <td><%= translate_enum_name(Ticket, :prioritys, ticket.priority) %></td>
+                  <td><%= translate_enum_name(Ticket, :priorities, ticket.priority) %></td>
                   <td><%= translate_enum_name(Ticket, :statuses, ticket.status) %></td>
                   <td><%= timezone(ticket.updated_at) %></td>
                 </tr>

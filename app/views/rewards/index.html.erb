@@ -11,6 +11,8 @@
         <th>Nome</th>
         <th>Data Início</th>
         <th>Data Fim</th>
+        <th>Prioridade</th>
+        <th>Quantidade</th>
         <th>Status</th>
         <th>Açoes</th>
       </tr>
@@ -19,9 +21,11 @@
       <% @rewards.each do |reward| %>
         <tr>
           <td><%= reward.name %></td>
-          <td><%= reward.dta_inicio %></td>
-          <td><%= reward.dta_fim %></td>
-          <td><%= reward.status.to_i == 1 ? "Ativo" : "Inativo" %></td>
+          <td><%= reward&.type_association&.dta_inicio %></td>
+          <td><%= reward&.type_association&.dta_fim %></td>
+          <td><%= reward&.type_association&.decorate.priorities %></td>
+          <td><%= reward&.type_association&.quantidade %></td>
+          <td><%= reward&.status.to_i == 1 ? "Ativo" : "Inativo" %></td>
           <td align="center">
             <%= link_to_editar(edit_reward_path(reward)) %>
             <%= link_to_excluir(reward_path(reward)) %>

@@ -1,7 +1,7 @@
 <% label_form ||= "" %>
 <%= form_with(model: reward, local: true) do |f| %>
   <div class="row mt-sm-4">
-    <div class="col-12 col-md-12 col-lg-6">
+    <div class="col-12 col-md-12 col-lg-12">
       <div class="card card-primary">
         <div class="card-header">
           <h4><%= label_form %></h4>
@@ -14,34 +14,13 @@
               <%= f.text_field :name, autofocus: true, class: 'form-control' %>
             </div>
           </div>
-          <div class="form-row">
-            <div class="form-group col-md-12">
-              <%= f.fields_for :type_associations do |type_rule| %>
-                <%= render 'type_association_fields', f: type_rule %>
-              <% end %>
-              <br>
-              <%= link_to_add_association "Adicionar Tipo de Regra", f, :type_associations, class: 'btn btn-info' %>
-            </div>
-          </div>
+          <%= f.fields_for :type_association do |e| %>
+            <% render 'type_association_fields', f: e %>
+          <% end %>
           <div class="form-row">
             <div class="form-group col-md-12">
               <%= f.label :descricao %><br/>
               <%= f.text_area :descricao, rows: 4, class: 'form-control' %>
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group col-md-12">
-              <%= f.label :dta_inicio %><br/>
-              <%= f.text_field :dta_inicio, value: f.object.dta_fim.strftime("%d/%m/%y %R"),
-                               class: 'form-control datetimepicker' %>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group col-md-12">
-              <%= f.label :dta_fim %><br/>
-              <%= f.text_field :dta_fim, value: f.object.dta_fim.strftime("%d/%m/%y %R"),
-                               class: 'form-control datetimepicker' %>
             </div>
           </div>
 

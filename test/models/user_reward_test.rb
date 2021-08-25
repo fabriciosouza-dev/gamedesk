@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class TypeRuleTest < ActiveSupport::TestCase
+class UserRewardTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

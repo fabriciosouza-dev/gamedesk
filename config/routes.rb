@@ -3,9 +3,10 @@ Rails.application.routes.draw do
 
   resources :yields
   resources :type_rules, path: :tipo_regras
-  resources :rewards, path: :recompensas
+  resources :rewards, path: :cadastro_recompensas
   resources :users, path: :usuarios
   resources :achievements, path: :cadastro_conquistas
+  resources :user_rewards, path: :recompensas, only: [:index]
   resources :user_achievements, path: :conquistas, only: [:index] do
     get :open_achievements, on: :collection
   end

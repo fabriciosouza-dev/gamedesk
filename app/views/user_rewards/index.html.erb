@@ -1,0 +1,23 @@
+<div class="card card-primary">
+  <div class="card-header">
+    <h4>Recompensas</h4>
+    <div class="card-header-action">
+      <a data-collapse="#reward-itens" class="btn btn-icon btn-warning" href="#"><i class="fas fa-minus"></i></a>
+    </div>
+  </div>
+  <div class="collapse show" id="reward-itens" style="">
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table" width="100%" cellspacing="0">
+          <tbody style="font-weight: bold">
+          <% @rewards.each do |reward| %>
+            <tr>
+              <td><%= reward.name %></td>
+            </tr>
+          <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

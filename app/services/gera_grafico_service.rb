@@ -28,7 +28,7 @@ class GeraGraficoService
         row[:count] = priority[1].size if priority[0] == row[:priority]
       end
     end
-    grafico = { labels: group.map { |x| Util.translate_enum_name(Ticket, :prioritys, x[:priority]) },
+    grafico = { labels: group.map { |x| Util.translate_enum_name(Ticket, :priorities, x[:priority]) },
                 datasets: [{ label: 'Prioridade dos Chamados Resolvidos',
                              data: group.map { |x| x[:count] },
                              backgroundColor: ['#EB870E', '#464646', '#7678ED', '#08A045', '#DB162F'],

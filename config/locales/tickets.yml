@@ -10,7 +10,7 @@ pt-BR:
         raw_subject: 'Corpo do chamado em html'
         description: 'Descrição'
         priority: 'Prioridade'
-        prioritys:
+        priorities:
           baixo: "Baixa"
           normal: "Normal"
           alta: "Alta"

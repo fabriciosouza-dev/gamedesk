@@ -1,11 +1,37 @@
 <div class="nested-fields">
-  <div class="form-row">
-    <div class="form-group col-md-10">
-      <%= f.label :type_rule_id %><br/>
-      <%= f.number_field :type_rule_id, class: 'form-control' %>
+  <div class="form-row border border-dark">
+    <div class="form-group col-md-3">
+      <%= f.label translate_attr(Ticket, :dta_inicio) %><br/>
+      <%= f.text_field :dta_inicio, value: f.object&.dta_inicio&.strftime("%d/%m/%y %R"),
+                       class: 'form-control datetimepicker' %>
     </div>
-    <div class="form-group col-md-2">
-      <%= link_to_remove_association "<span class='fas fa-times'></span>".html_safe, f, class: 'btn btn-danger btn-sm' %>
+    <div class="form-group col-md-3">
+      <%= f.label translate_attr(Ticket, :dta_fim) %><br/>
+      <%= f.text_field :dta_fim, value: f.object&.dta_fim&.strftime("%d/%m/%y %R"),
+                       class: 'form-control datetimepicker' %>
+    </div>
+    <div class="form-group col-md-3">
+      <%= f.label translate_attr(Ticket, :priority) %><br/>
+      <%= h f.select :priority, options_for_select(Hash[Ticket.priorities.map {
+        |k, v| [translate_enum_name(Ticket, :priorities, k), k] }], f.object&.priority&.split(',')),
+                     {}, { class: 'form-control select2', multiple: true } %>
+    </div>
+    <div class="form-group col-md-3">
+      <%= f.label translate_attr(Ticket, :quantidade) %><br/>
+      <%= f.text_field :quantidade, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="form-row">
+    <h2 class="element-center margin-top-15">OU</h2>
+  </div>
+  <div class="form-row border border-dark">
+    <div class="form-group col-md-12">
+      <%= f.label translate_attr(Ticket, :regra) %><br/>
+      <%= f.text_area :regra, rows: 4, class: 'form-control codeeditor' %>
     </div>
   </div>
 </div>
+
+<script>
+    $(".select2").select2();
+</script>

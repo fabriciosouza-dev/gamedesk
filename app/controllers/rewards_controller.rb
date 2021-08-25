@@ -13,10 +13,12 @@ class RewardsController < ApplicationController
   # GET /rewards/new
   def new
     @reward = Reward.new
+    @reward.build_type_association
   end
 
   # GET /rewards/1/edit
   def edit
+    @reward.build_type_association unless @reward.type_association.present?
   end
 
   # POST /rewards or /rewards.json
@@ -69,7 +71,9 @@ class RewardsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def reward_params
-    params.require(:reward).permit(:name, :descricao, :dta_inicio, :dta_fim, :status,
-                                   type_associations_attributes: [:id, :type_rule_id, :_destroy])
+    params.require(:reward).permit(:name, :descricao, :status,
+                                   type_association_attributes: [:id, :type_rule_id,
+                                                                 :dta_inicio, :dta_fim,
+                                                                 :regra, :quantidade, :_destroy, priority: []])
   end
 end
