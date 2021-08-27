@@ -11,20 +11,19 @@
           <div class="form-row">
             <div class="form-group col-md-12">
               <%= f.label :name %><br/>
-              <%= f.text_field :name, autofocus: true, class: 'form-control' %>
+              <%= f.text_field :name, required: true, autofocus: true, class: 'form-control' %>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <%= f.label :recompensa %><br/>
+              <%= f.text_field :recompensa, required: true, class: 'form-control' %>
             </div>
           </div>
           <%= f.fields_for :type_association do |e| %>
             <% render 'type_association_fields', f: e %>
           <% end %>
-          <div class="form-row">
-            <div class="form-group col-md-12">
-              <%= f.label :descricao %><br/>
-              <%= f.text_area :descricao, rows: 4, class: 'form-control' %>
-            </div>
-          </div>
-
-          <div class="align-left-right">
+          <div class="align-left-right" style="margin-top: 25px">
             <%= link_to 'Voltar', rewards_path, class: "btn btn-primary" %>
             <%= f.submit "Salvar", { class: 'btn btn-warning mr-1' } %>
           </div>

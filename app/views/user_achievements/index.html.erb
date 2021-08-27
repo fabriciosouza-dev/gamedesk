@@ -1,20 +1,23 @@
-<div class="card card-primary">
-  <div class="card-header">
-    <h4>Conquistas</h4>
-    <div class="card-header-action">
-      <a data-collapse="#achievements-itens" class="btn btn-icon btn-warning" href="#"><i class="fas fa-minus"></i></a>
-    </div>
-  </div>
-  <div class="collapse show" id="achievements-itens" style="">
-    <div class="card-body">
-      <div class="gallery gallery-md">
-        <% @achievements.order(:order).each do |icone| %>
-          <%= link_to open_achievements_user_achievements_path(id: icone.id), { remote: true, 'data-toggle' => "modal", 'data-target' => '#modal-window' } do %>
-            <%= image_tag icone.image, class: "gallery-item #{@user_achievements
-              .map(&:achievement_id).include?(icone.id) ? '' : 'filter-grayscale'}" %>
-          <% end %>
-        <% end %>
-      </div>
-    </div>
-  </div>
+<h2 class="section-title">Conquistas</h2>
+<div class="row">
+  <% @achievements.order(:order).each do |icone| %>
+    <% conquistou = @user_achievements.map(&:achievement_id).include?(icone.id) %>
+    <figure style="width: 10%; margin: 15px">
+      <%= link_to open_achievements_user_achievements_path(id: icone.id), { remote: true, 'data-toggle' => "modal", 'data-target' => '#modal-window' } do %>
+        <%= image_tag icone.image, class: "img-responsive #{conquistou ? '' : 'filter-grayscale'}" %>
+      <% end %>
+    </figure>
+<!--    <div class="col-sm-2">-->
+<!--      <div class="card card-<%#= conquistou ? 'success' : 'dark' %>">-->
+<!--        <div class="card-header">-->
+<!--          <h4><%#= icone&.name %></h4>-->
+<!--        </div>-->
+<!--        <div class="card-body">-->
+          <%#= link_to open_achievements_user_achievements_path(id: icone.id), { remote: true, 'data-toggle' => "modal", 'data-target' => '#modal-window' } do %>
+            <%#= image_tag icone.image, class: "img-responsive #{conquistou ? '' : 'filter-grayscale'}" %>
+          <%# end %>
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+  <% end %>
 </div>

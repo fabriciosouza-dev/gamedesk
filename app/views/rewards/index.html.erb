@@ -8,7 +8,8 @@
     <table class="table table-striped table-bordered dataTable" width="100%" cellspacing="0">
       <thead>
       <tr>
-        <th>Nome</th>
+        <th>Objetivo</th>
+        <th>Recompensa</th>
         <th>Data Início</th>
         <th>Data Fim</th>
         <th>Prioridade</th>
@@ -21,6 +22,7 @@
       <% @rewards.each do |reward| %>
         <tr>
           <td><%= reward.name %></td>
+          <td><%= reward.recompensa %></td>
           <td><%= reward&.type_association&.dta_inicio %></td>
           <td><%= reward&.type_association&.dta_fim %></td>
           <td><%= reward&.type_association&.decorate.priorities %></td>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_25_015058) do
+ActiveRecord::Schema.define(version: 2021_08_26_234900) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -83,7 +83,7 @@ ActiveRecord::Schema.define(version: 2021_08_25_015058) do
 
   create_table "rewards", force: :cascade do |t|
     t.string "name", comment: "Identifica o nome da recompensa"
-    t.string "descricao", comment: "Identifica a descrição da recompensa"
+    t.string "recompensa", comment: "Identifica a descrição da recompensa"
     t.integer "status", default: 1, comment: "Identifica se ativo ou inativo a recompensa 0-Inativo 1-Ativo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

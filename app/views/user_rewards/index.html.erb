@@ -1,23 +1,29 @@
-<div class="card card-primary">
-  <div class="card-header">
-    <h4>Recompensas</h4>
-    <div class="card-header-action">
-      <a data-collapse="#reward-itens" class="btn btn-icon btn-warning" href="#"><i class="fas fa-minus"></i></a>
-    </div>
-  </div>
-  <div class="collapse show" id="reward-itens" style="">
-    <div class="card-body">
-      <div class="table-responsive">
-        <table class="table" width="100%" cellspacing="0">
-          <tbody style="font-weight: bold">
-          <% @rewards.each do |reward| %>
-            <tr>
-              <td><%= reward.name %></td>
-            </tr>
-          <% end %>
-          </tbody>
-        </table>
+<h2 class="section-title">Recompensas</h2>
+<div class="row">
+  <% @rewards.sort_by { |x| [x[:order], x[:created_at]] }.each do |reward| %>
+    <div class="col-md-4 col-lg-4">
+      <div class="card card-<%= reward[:color] %>" style="margin: 20px">
+        <div class="card-header">
+          <div class="container">
+            <div class="row justify-content-center">
+              <h5><%= reward[:name] %></h5>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="card-header">
+          <div class="container">
+            <div class="row justify-content-center">
+              <h5><%= reward[:recompensa] %></h5>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="card-body">
+          <%= progress(reward[:qtd_user], reward[:qtd_reward], reward[:color], 25) %>
+        </div>
       </div>
     </div>
-  </div>
+  <% end %>
 </div>
+

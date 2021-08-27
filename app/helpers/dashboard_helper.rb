@@ -12,14 +12,5 @@ module DashboardHelper
     end
   end
 
-  def progress(value, total)
-    percent = Util.percent(value, total).round(2).to_s
-    html = <<-HTML
-      <div class="progress mb-3" data-height="10" style="height: 10px; " data-toggle="tooltip" data-placement="top" title='' data-original-title="Pontuação: #{value} / #{total.to_i}">
-        <div class="progress-bar bg-warning" role="progressbar" data-width="#{percent}%" aria-valuenow="#{percent}" aria-valuemin="0" aria-valuemax="100" style="width: #{percent}%;"></div>
-      </div>
-    HTML
-    html.html_safe
-  end
 end
 

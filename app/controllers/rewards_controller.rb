@@ -71,7 +71,7 @@ class RewardsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def reward_params
-    params.require(:reward).permit(:name, :descricao, :status,
+    params.require(:reward).permit(:name, :recompensa, :status,
                                    type_association_attributes: [:id, :type_rule_id,
                                                                  :dta_inicio, :dta_fim,
                                                                  :regra, :quantidade, :_destroy, priority: []])

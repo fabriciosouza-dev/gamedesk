@@ -4,8 +4,10 @@ class TypeAssociationDecorator < ApplicationDecorator
   def priorities
     html = <<-HTML
     HTML
-    self.priority.split(',').each do |priority|
-      html += "<span class='btn btn-outline-primary btn-sm'>#{Util.translate_enum_name(Ticket, :priorities, priority)}</span>"
+    if self.priority.present?
+      self.priority.split(',').each do |priority|
+        html += "<span class='btn btn-outline-primary btn-sm'>#{Util.translate_enum_name(Ticket, :priorities, priority)}</span>"
+      end
     end
     html.html_safe
   end

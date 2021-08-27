@@ -4,10 +4,14 @@ class TypeAssociation < ApplicationRecord
 
   before_save :format_priority
 
+  private
+
   def format_priority
     array = JSON.parse(self.priority)
     if array.reject!(&:empty?).present?
       self.priority = array.join(',')
+    else
+      self.priority = nil
     end
   end
 end

@@ -4,7 +4,7 @@ class UserRewardsController < ApplicationController
   # GET /user_rewards or /user_rewards.json
   def index
     @user_rewards = UserReward.all
-    @rewards = Reward.all
+    @rewards = ExecutaRecompensasService.new(assignee_id: current_user.assignee_id).execute
   end
 
   # GET /user_rewards/1 or /user_rewards/1.json

@@ -105,4 +105,14 @@ module ApplicationHelper
     date.strftime("%d/%m/%Y %H:%M:%S")
   end
 
+  def progress(value, total, color = 'warning', height = 10)
+    percent = Util.percent(value, total).round(2).to_s
+    html = <<-HTML
+      <div class="progress mb-3" data-height="#{height}" style="height: #{height}px; " data-toggle="tooltip" data-placement="top" title='' data-original-title="Pontuação: #{value} / #{total.to_i}">
+        <div class="progress-bar bg-#{color}" role="progressbar" data-width="#{percent}%" aria-valuenow="#{percent}" aria-valuemin="0" aria-valuemax="100" style="width: #{percent}%;"></div>
+      </div>
+    HTML
+    html.html_safe
+  end
+
 end
