@@ -23,6 +23,7 @@ class RewardsController < ApplicationController
 
   # POST /rewards or /rewards.json
   def create
+    puts reward_params
     @reward = Reward.new(reward_params)
 
     respond_to do |format|

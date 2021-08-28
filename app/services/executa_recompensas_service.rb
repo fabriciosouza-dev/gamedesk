@@ -25,7 +25,7 @@ class ExecutaRecompensasService
 
         qtd = Ticket.find_by_sql([sql, { assignee_id: @assignee_id }]).size
         qtd_reward = reward&.type_association&.quantidade
-        if qtd >= qtd_reward
+        if qtd.to_i >= qtd_reward.to_i
           qtd = qtd_reward
           UserReward.first_or_create(assignee_id: @assignee_id, reward_id: reward.id)
         end

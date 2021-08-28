@@ -5,7 +5,7 @@ class CreateTypeAssociations < ActiveRecord::Migration[5.2]
         t.integer :type_rule_id
         t.string :regra
         t.integer :status
-        t.integer :priority
+        t.string :priority
         t.integer :quantidade
         t.timestamp :dta_inicio
         t.timestamp :dta_fim
@@ -21,7 +21,7 @@ class CreateTypeAssociations < ActiveRecord::Migration[5.2]
       add_column TypeAssociation.table_name, :status, :integer
     end
     unless column_exists? TypeAssociation.table_name, :priority
-      add_column TypeAssociation.table_name, :priority, :integer
+      add_column TypeAssociation.table_name, :priority, :string
     end
     unless column_exists? TypeAssociation.table_name, :quantidade
       add_column TypeAssociation.table_name, :quantidade, :integer

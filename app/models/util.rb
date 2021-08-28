@@ -4,6 +4,7 @@ class Util
   end
 
   def self.percent(value, total)
+    return 0 if value.nil? || total.nil?
     (value * 100) / total
   end
 
