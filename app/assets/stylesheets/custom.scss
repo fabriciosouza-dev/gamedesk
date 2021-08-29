@@ -170,3 +170,11 @@ btn-primary.disabled, .btn-primary:disabled {
     box-shadow: 0 0 0 0 rgba(67, 172, 106, 0);
   }
 }
+
+.center-img-perfil {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  width: 100px;
+  margin: -35px -5px 0 30px;
+  position: relative;
+  z-index: 1;
+}

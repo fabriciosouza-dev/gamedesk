@@ -23,7 +23,7 @@
 //= require summernote/dist/summernote-bs4
 //= require chocolat/dist/js/jquery.chocolat
 //= require sweetalert/dist/sweetalert.min
-//= require izitoast/dist/js/iziToast
+//= require iziToast
 //= require jquery-pwstrength/jquery.pwstrength
 //= require cocoon
 //= require scripts

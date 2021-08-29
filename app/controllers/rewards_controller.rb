@@ -1,5 +1,6 @@
 class RewardsController < ApplicationController
   before_action :set_reward, only: %i[ show edit update destroy ]
+  before_action :permission
 
   # GET /rewards or /rewards.json
   def index
@@ -75,5 +76,12 @@ class RewardsController < ApplicationController
                                    type_association_attributes: [:id, :type_rule_id,
                                                                  :dta_inicio, :dta_fim,
                                                                  :regra, :quantidade, :_destroy, priority: []])
+  end
+
+  def permission
+    unless can? :manage, :all
+      flash[:error] = "Vocé não tem permissão!"
+      redirect_to root_path
+    end
   end
 end

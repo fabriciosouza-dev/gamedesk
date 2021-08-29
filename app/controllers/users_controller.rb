@@ -2,6 +2,8 @@ class UsersController < ApplicationController
   load_and_authorize_resource
   before_action :set_user, only: %i[ show edit update destroy ]
   before_action :add_breadcrumb_menu, only: %i[ show edit update destroy new ]
+  before_action :permission
+
 
   # GET /users or /users.json
   def index
@@ -96,5 +98,12 @@ class UsersController < ApplicationController
   def add_breadcrumb_menu
     add_breadcrumb "Cadastros Básicos", '#'
     add_breadcrumb "Usuários", users_path
+  end
+
+  def permission
+    unless can? :manage, :all
+      flash[:error] = "Vocé não tem permissão!"
+      redirect_to root_path
+    end
   end
 end

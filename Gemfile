@@ -48,6 +48,7 @@ gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'font-awesome-sass', '~> 5.5.0'
 gem 'jquery-rails'
 gem 'autoprefixer-rails'
+gem 'izitoast'
 gem 'whenever', require: false
 
 # Use Capistrano for deployment

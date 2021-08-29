@@ -1,8 +1,8 @@
 <% label_form ||= "" %>
 <% hide_link_back ||= false %>
 <%= form_with(model: object, local: true) do |f| %>
-  <div class="row mt-sm-4">
-    <div class="col-12 col-md-12 col-lg-6">
+  <div class="row">
+    <div class="col-md-12">
       <div class="card card-primary">
         <div class="card-header">
           <h4><%= label_form %></h4>
@@ -11,8 +11,15 @@
           <%= render 'components/errors_message', object: object %>
           <div class="card profile-widget">
             <%= f.hidden_field :origem %>
-            <div class="profile-widget-header">
-              <%= user_profile_img(f&.object, { class: 'rounded-circle profile-widget-picture', id: 'img_prev' }) %>
+            <div class="row text-center">
+              <div class="col-12">
+              <%= user_profile_img(f&.object, { class: 'rounded-circle center-img-perfil', id: 'img_prev' }) %>
+              </div>
+            </div>
+            <div class="form-row" style="margin-top: 20px">
+              <div class="col-md-12">
+                <%= progress(f.object.yield.xp.to_i, Util.calcula_xp(f.object.yield.level), 'warning', 25) %>
+              </div>
             </div>
             <div class="custom-file">
               <%= f.file_field :image, class: 'custom-file-input', onchange: "readURL(this);" %>
@@ -33,29 +40,27 @@
             </div>
           <% end %>
           <div class="form-row">
-            <div class="form-group col-md-12">
+            <div class="form-group col-md-6">
               <%= f.label :name %><br/>
               <%= f.text_field :name, autofocus: true, class: 'form-control' %>
             </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group col-md-12">
+            <div class="form-group col-md-6">
               <%= f.label :email, "#{translate_attr(object.class.name, :email)}" %><br/>
               <%= f.email_field :email, class: 'form-control', autocomplete: "email" %>
             </div>
           </div>
 
-          <div class="form-group">
-            <%= f.label :password, "#{translate_attr(object.class.name, :password)}" %>
-            <%= f.password_field :password,
-                                 class: "form-control" %>
-          </div>
-
-          <div class="form-group">
-            <%= f.label :password_confirmation, "#{translate_attr(object.class.name, :password_confirmation)}" %>
-            <%= f.password_field :password_confirmation,
-                                 class: "form-control" %>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <%= f.label :password, "#{translate_attr(object.class.name, :password)}" %>
+              <%= f.password_field :password,
+                                   class: "form-control" %>
+            </div>
+            <div class="form-group col-md-6">
+              <%= f.label :password_confirmation, "#{translate_attr(object.class.name, :password_confirmation)}" %>
+              <%= f.password_field :password_confirmation,
+                                   class: "form-control" %>
+            </div>
           </div>
 
           <div class="<%= hide_link_back ? 'float-right' : 'align-left-right' %>">

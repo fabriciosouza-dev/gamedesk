@@ -1,5 +1,6 @@
 class AchievementsController < ApplicationController
   before_action :set_achievement, only: %i[ show edit update destroy ]
+  before_action :permission
 
   # GET /achievements or /achievements.json
   def index
@@ -70,5 +71,12 @@ class AchievementsController < ApplicationController
   # Only allow a list of trusted parameters through.
   def achievement_params
     params.require(:achievement).permit(:regra, :descricao, :status, :chave, :image, :name)
+  end
+
+  def permission
+    unless can? :manage, :all
+      flash[:error] = "Vocé não tem permissão!"
+      redirect_to root_path
+    end
   end
 end
