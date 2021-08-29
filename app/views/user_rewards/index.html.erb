@@ -2,7 +2,7 @@
 <div class="row">
   <% @rewards.sort_by { |x| [x[:order], x[:created_at]] }.each do |reward| %>
     <div class="col-md-4 col-lg-4">
-      <div class="card card-<%= reward[:color] %>" style="margin: 20px">
+      <div class="card pulse-<%= reward[:color] %> card-<%= reward[:color] %>" style="margin: 20px">
         <div class="card-header">
           <div class="container">
             <div class="row justify-content-center">
