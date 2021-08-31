@@ -21,7 +21,7 @@
             </div>
           </div>
           <%= f.fields_for :type_association do |e| %>
-            <% render 'type_association_fields', f: e %>
+            <% render 'type_association_fields', f: e, mostra_regra: false %>
           <% end %>
           <div class="align-left-right" style="margin-top: 25px">
             <%= link_to 'Voltar', rewards_path, class: "btn btn-primary" %>

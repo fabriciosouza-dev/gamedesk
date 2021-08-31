@@ -12,4 +12,8 @@ class Util
     return nil unless enum_value
     I18n.t("activerecord.attributes.#{class_name.to_s.underscore}.#{enum_name}.#{enum_value}")
   end
+
+  def self.format_date_br(date)
+    date.strftime("%d/%m/%Y %H:%M")
+  end
 end

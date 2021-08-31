@@ -1,29 +1,7 @@
 <h2 class="section-title">Recompensas</h2>
 <div class="row">
-  <% @rewards.sort_by { |x| [x[:order], x[:created_at]] }.each do |reward| %>
-    <div class="col-md-4 col-lg-4">
-      <div class="card pulse-<%= reward[:color] %> card-<%= reward[:color] %>" style="margin: 20px">
-        <div class="card-header">
-          <div class="container">
-            <div class="row justify-content-center">
-              <h5><%= reward[:name] %></h5>
-            </div>
-          </div>
-        </div>
-        <hr>
-        <div class="card-header">
-          <div class="container">
-            <div class="row justify-content-center">
-              <h5><%= reward[:recompensa] %></h5>
-            </div>
-          </div>
-        </div>
-        <hr>
-        <div class="card-body">
-          <%= progress(reward[:qtd_user], reward[:qtd_reward], reward[:color], 25) %>
-        </div>
-      </div>
-    </div>
+  <% @rewards.sort_by { |x| [x.order, x.created_at] }.each do |reward| %>
+    <%= cria_modulo(reward).html_safe %>
   <% end %>
 </div>
 

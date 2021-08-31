@@ -98,7 +98,7 @@ btn-primary.disabled, .btn-primary:disabled {
 }
 
 .no-padding {
-  padding: 2px !important;
+  padding: 0 !important;
 }
 
 .background-transparent {
@@ -151,7 +151,7 @@ btn-primary.disabled, .btn-primary:disabled {
 
 .card.pulse-success {
   box-shadow: 0 0 0 0 rgba(67, 172, 106, 1);
-  animation: pulse-success 2s infinite;
+  animation: pulse-success 5s infinite;
 }
 
 @keyframes pulse-success {
@@ -168,6 +168,28 @@ btn-primary.disabled, .btn-primary:disabled {
   100% {
     transform: scale(1);
     box-shadow: 0 0 0 0 rgba(67, 172, 106, 0);
+  }
+}
+
+.card.pulse-info {
+  box-shadow: 0 0 0 0 rgba(118, 120, 237, 1);
+  animation: pulse-info 4s infinite;
+}
+
+@keyframes pulse-info {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(118, 120, 237, 0.7);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(118, 120, 237, 0);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(118, 120, 237, 0);
   }
 }
 

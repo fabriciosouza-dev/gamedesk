@@ -21,15 +21,18 @@
       <%= f.text_field :quantidade, class: 'form-control' %>
     </div>
   </div>
-  <div class="form-row">
-    <h2 class="element-center margin-top-15">OU</h2>
-  </div>
-  <div class="form-row border border-dark">
-    <div class="form-group col-md-12">
-      <%= f.label translate_attr(Ticket, :regra) %><br/>
-      <%= f.text_area :regra, rows: 4, class: 'form-control codeeditor' %>
+  <% mostra_regra = mostra_regra.nil? ? true : mostra_regra %>
+  <% if mostra_regra %>
+    <div class="form-row">
+      <h2 class="element-center margin-top-15">OU</h2>
     </div>
-  </div>
+    <div class="form-row border border-dark">
+      <div class="form-group col-md-12">
+        <%= f.label translate_attr(Ticket, :regra) %><br/>
+        <%= f.text_area :regra, rows: 4, class: 'form-control codeeditor' %>
+      </div>
+    </div>
+  <% end %>
 </div>
 
 <script>

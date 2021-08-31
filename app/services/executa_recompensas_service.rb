@@ -27,17 +27,17 @@ class ExecutaRecompensasService
         qtd_reward = reward&.type_association&.quantidade
         if qtd.to_i >= qtd_reward.to_i
           qtd = qtd_reward
-          UserReward.first_or_create(assignee_id: @assignee_id, reward_id: reward.id)
+          UserReward.where(assignee_id: @assignee_id, reward_id: reward.id)
+                    .first_or_create(assignee_id: @assignee_id, reward_id: reward.id)
         end
 
-        array << { name: reward.name,
-                   qtd_user: qtd,
-                   recompensa: reward.recompensa,
-                   qtd_reward: qtd_reward,
-                   color: return_hash(qtd, qtd_reward)[:color],
-                   order: return_hash(qtd, qtd_reward)[:order],
-                   created_at: reward.created_at,
-                   percentage: Util.percent(qtd, qtd_reward).round(2) }
+        reward.qtd_user = qtd
+        reward.qtd_reward = qtd_reward
+        reward.color = return_hash(qtd, qtd_reward)[:color]
+        reward.order = return_hash(qtd, qtd_reward)[:order]
+        reward.percentage = Util.percent(qtd, qtd_reward).round(2)
+
+        array << reward
       end
     end
     return array
