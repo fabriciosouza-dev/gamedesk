@@ -11,7 +11,7 @@ module UserRewardsHelper
               <h4 class="text-align-center no-padding">#{objeto.name}</h4>
             </div>
             <div class="row justify-content-center">
-              <span class="btn #{regra[:btn]}" data-toggle="tooltip" title="" 
+              <span class="btn #{regra[:btn]}" data-placement="bottom" data-toggle="tooltip" title="" 
                     data-original-title="Recompensa">#{objeto.recompensa}</span>
             </div>
           </div>
