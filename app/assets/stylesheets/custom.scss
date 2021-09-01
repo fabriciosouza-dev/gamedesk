@@ -200,3 +200,37 @@ btn-primary.disabled, .btn-primary:disabled {
   position: relative;
   z-index: 1;
 }
+
+.outter-badge {
+  position: relative;
+  margin: 10px;
+  background: #fff;
+  width: 64px;
+}
+
+.inner-badge {
+  display: table;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border: 2px solid #2D2D2D;
+  color:white;
+  background:#2D2D2D;
+  border-radius: 50%;
+  top: 56px;
+  right: -70px;
+  background-size: cover;
+  text-align: center;
+  z-index: 10;
+}
+
+.inner-badge p{
+  display: table-cell;
+  vertical-align: middle;
+  padding: 1px;
+}
+
+.background-grey {
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #666;
+}

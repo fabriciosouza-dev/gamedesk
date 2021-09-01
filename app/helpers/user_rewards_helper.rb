@@ -20,7 +20,7 @@ module UserRewardsHelper
             <div class="row justify-content-center">
               <p style="font-size: 16px" class="text-align-center margin-top-15 #{regra[:class_prazo]}">#{regra[:prazo]}</p>
             </div>
-            #{progress(objeto.qtd_user, objeto.qtd_reward, objeto.color, 25)}
+            #{progress(objeto.qtd_user, objeto.qtd_reward, {color: objeto.color, height: 25})}
         </div>
       </div>
     </div>

@@ -1,5 +1,5 @@
 <% label_form ||= "" %>
-<% hide_link_back ||= false %>
+<% link_back ||= users_path %>
 <%= form_with(model: object, local: true) do |f| %>
   <div class="row">
     <div class="col-md-12">
@@ -13,15 +13,10 @@
             <%= f.hidden_field :origem %>
             <div class="row text-center">
               <div class="col-12">
-              <%= user_profile_img(f&.object, { class: 'rounded-circle center-img-perfil', id: 'img_prev' }) %>
+                <%= user_profile_img(f&.object, { class: 'rounded-circle center-img-perfil', id: 'img_prev' }) %>
               </div>
             </div>
-            <div class="form-row" style="margin-top: 20px">
-              <div class="col-md-12">
-                <%= progress(f.object.yield.xp.to_i, Util.calcula_xp(f.object.yield.level), 'warning', 25) %>
-              </div>
-            </div>
-            <div class="custom-file">
+            <div class="custom-file" style="margin-top: 20px">
               <%= f.file_field :image, class: 'custom-file-input', onchange: "readURL(this);" %>
               <%= f.label :image, "#{translate_attr(object.class.name, :image)}", id: 'label_imag', class: 'custom-file-label' %>
               <br/>
@@ -63,8 +58,8 @@
             </div>
           </div>
 
-          <div class="<%= hide_link_back ? 'float-right' : 'align-left-right' %>">
-            <%= link_to 'Voltar', users_path, class: "btn btn-primary" unless hide_link_back %>
+          <div class="align-left-right">
+            <%= link_to 'Voltar', link_back, class: "btn btn-primary" %>
             <%= f.submit "Salvar", { class: "btn btn-warning mr-1" } %>
           </div>
         </div>

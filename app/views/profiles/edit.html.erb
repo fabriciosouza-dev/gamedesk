@@ -1,6 +1,2 @@
-<h1>Editing Profile</h1>
-
-<%= render 'form', profile: @profile %>
-
-<%= link_to 'Show', @profile %> |
-<%= link_to 'Voltar', profiles_path %>
+<% label_form = "Editar Perfil" %>
+<%= render 'components/formularios/form_user', object: @profile, label_form: label_form, link_back: profiles_path %>

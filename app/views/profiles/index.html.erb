@@ -1,3 +1,74 @@
-<% label_form = "Editar Perfil" %>
 <h2 class="section-title">Olá, <%= @profile.name %>!</h2>
-<%= render 'components/formularios/form_user', object: @profile, label_form: label_form, hide_link_back: true %>
+<div class="row">
+  <div class="col-md-12">
+    <div class="card card-primary">
+      <div class="card-header" style="justify-content: space-between;">
+        <h4>Perfil</h4>
+        <%= link_to_editar(edit_profile_path(@profile), { label: 'Editar Perfil', class: "btn btn-primary" }) %>
+      </div>
+      <div class="card-body">
+        <div class="row align-items-center">
+          <div class="col-md-2 no-padding">
+            <div class="outter-badge">
+              <%= user_profile_img(@profile, { class: 'rounded-circle center-img-perfil', id: 'img_prev' }) %>
+              <div class="inner-badge">
+                <p><%= @profile&.yield&.level %></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 no-padding">
+            <h5>XP</h5>
+            <%= progress(@profile.yield.xp.to_i, Util.calcula_xp(@profile.yield.level),
+                         { height: 50, show_percentage: true, label_progress: 'XP:' }) %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-12 col-md-6 col-lg-6">
+    <div class="card card-dark">
+      <div class="card-header">
+        <h4>Conquistas</h4>
+      </div>
+      <div class="card-body">
+        <div class="gallery">
+          <% @user_achievements.each do |icone| %>
+            <%= image_tag icone&.achievement&.image, class: "img-responsive gallery-item" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-md-6 col-lg-6">
+    <div class="card card-dark">
+      <div class="card-header">
+        <h4>Regras do Jogo</h4>
+      </div>
+      <div class="card-body">
+        <div class="col-md-12">
+          <table class="table table table-bordered">
+            <thead class="thead-dark">
+            <tr>
+              <th>Regra</th>
+              <th>Pontos</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% @regras.each do |regra| %>
+              <tr class="<%= regra[:class] %>">
+                <td><%= regra[:objetivo] %></td>
+                <td><%= regra[:ponto] %></td>
+              </tr>
+            <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

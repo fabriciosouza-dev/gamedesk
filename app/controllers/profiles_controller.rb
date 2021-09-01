@@ -5,6 +5,8 @@ class ProfilesController < ApplicationController
   def index
     @profile = User.find_by(assignee_id: current_user.assignee_id)
     @profile.origem = :profile
+    @regras = regras
+    @user_achievements = UserAchievement.where(assignee_id: current_user.assignee_id)
   end
 
   # GET /profiles/1 or /profiles/1.json
@@ -35,6 +37,38 @@ class ProfilesController < ApplicationController
   end
 
   private
+
+  def regras
+    [
+      { objetivo: 'Chamado atribuido', ponto: 1, class: '' },
+      { objetivo: 'Resolução do chamado', ponto: 2, class: '' },
+      { objetivo: 'Adicionou comentarios /por comentário', ponto: 1, class: '' },
+      { objetivo: 'Se a prioridade for urgente e for resolvida:', ponto: nil, class: 'background-grey' },
+      { objetivo: 'No mesmo dia de criação', ponto: 15, class: '' },
+      { objetivo: '1 dia depois', ponto: 13, class: '' },
+      { objetivo: '2 a 7 dias', ponto: 11, class: '' },
+      { objetivo: '8 a 30 dias', ponto: 9, class: '' },
+      { objetivo: 'Acima de 30 dias', ponto: 7, class: '' },
+      { objetivo: 'Se a prioridade for alta e for resolvida:', ponto: nil, class: 'background-grey' },
+      { objetivo: 'No mesmo dia de criação', ponto: 13, class: '' },
+      { objetivo: '1 dia depois', ponto: 11, class: '' },
+      { objetivo: '2 a 7 dias', ponto: 9, class: '' },
+      { objetivo: '8 a 30 dias', ponto: 7, class: '' },
+      { objetivo: 'Acima de 30 dias', ponto: 5, class: '' },
+      { objetivo: 'Se a prioridade for normal e for resolvida:', ponto: nil, class: 'background-grey' },
+      { objetivo: 'No mesmo dia de criação', ponto: 11, class: '' },
+      { objetivo: '1 dia depois', ponto: 9, class: '' },
+      { objetivo: '2 a 7 dias', ponto: 7, class: '' },
+      { objetivo: '8 a 30 dias', ponto: 5, class: '' },
+      { objetivo: 'Acima de 30 dias', ponto: 3, class: '' },
+      { objetivo: 'Se a prioridade for baixa e for resolvida:', ponto: nil, class: 'background-grey' },
+      { objetivo: 'No mesmo dia de criação', ponto: 9, class: '' },
+      { objetivo: '1 dia depois', ponto: 7, class: '' },
+      { objetivo: '2 a 7 dias', ponto: 5, class: '' },
+      { objetivo: '8 a 30 dias', ponto: 3, class: '' },
+      { objetivo: 'Acima de 30 dias', ponto: 1, class: '' }
+    ]
+  end
 
   # Use callbacks to share common setup or constraints between actions.
   def set_profile

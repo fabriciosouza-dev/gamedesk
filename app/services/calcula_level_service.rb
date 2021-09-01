@@ -8,7 +8,7 @@ class CalculaLevelService
 
   def execute
     #regras do jogo
-    # **Abertura de chamado 1 pontos
+    # **Chamado atribuido 1 ponto
     # **Resolução do chamado 2 pontos
     # **Adicionou comentarios 1 ponto para cada comentario
     # **Se a prioridade for urgente e for resolvida:
