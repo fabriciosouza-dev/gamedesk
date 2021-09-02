@@ -58,7 +58,7 @@ class CalculaLevelService
       if object_yield.present?
         tickets_xp_sum = object_yield.user.tickets.where.not(id: @new_ticket.id).map(&:xp).sum
         pontos_totais = tickets_xp_sum + pontos
-        level = object_yield.level
+        level = object_yield&.level
         if pontos_totais > Util.calcula_xp(level)
           object_yield.update(xp: pontos_totais, level: level + 1)
         else

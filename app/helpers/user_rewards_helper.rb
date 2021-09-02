@@ -33,7 +33,7 @@ module UserRewardsHelper
     encerra_hoje = Date.today == dta_fim.to_date
 
     if encerrou and !finalizou
-      { card: 'card-dark', btn: 'btn-outline-dark', pulse: '', prazo: 'ENCERRADO', class_prazo: 'font-weight-bold' }
+      { card: 'card-dark', btn: 'btn-outline-dark', pulse: '', prazo: "ENCERRADO: #{Util.format_date_br(dta_fim)}", class_prazo: 'font-weight-bold' }
     elsif encerra_hoje and !finalizou
       { card: 'card-danger', btn: 'btn-light', pulse: 'pulse-danger', prazo: "Encerra HOJE (#{dta_fim.strftime("%T")})" }
     elsif finalizou

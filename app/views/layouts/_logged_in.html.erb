@@ -48,7 +48,7 @@
       <% flash.each do |key, value| %>
       <% type = key.to_s.gsub('alert', 'error').gsub('notice', 'info') %>
       iziToast.<%= type %>({
-          title: '<%= value %>',
+          title: "<%= value.html_safe %>",
           position: 'topRight'
       });
       <% end %>

@@ -6,7 +6,12 @@ class ProfilesController < ApplicationController
     @profile = User.find_by(assignee_id: current_user.assignee_id)
     @profile.origem = :profile
     @regras = regras
-    @user_achievements = UserAchievement.where(assignee_id: current_user.assignee_id)
+    @user_achievements = UserAchievement.eager_load(:achievement)
+                                        .where(assignee_id: current_user.assignee_id)
+    @user_rewards = UserReward.eager_load(reward: :type_association)
+                              .where(assignee_id: current_user.assignee_id)
+
+
   end
 
   # GET /profiles/1 or /profiles/1.json

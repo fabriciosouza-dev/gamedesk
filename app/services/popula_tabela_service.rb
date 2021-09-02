@@ -48,7 +48,7 @@ class PopulaTabelaService
       # use the API at https://yoursubdomain.zendesk.com/api/v2
     end
 
-    client.tickets.each do |ticket|
+    client.tickets.all!.each do |ticket|
       ticket_object = Ticket.find_by(ticket_id: ticket[:id])
       if ticket_object.present?
         if ticket[:status] == 'pending' && ['open', 'solved'].include?(ticket_object.status)

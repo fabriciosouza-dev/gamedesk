@@ -48,12 +48,15 @@ namespace :popula_tickets do
     Yield.destroy_all
     Ticket.destroy_all
     Comment.destroy_all
+    UserReward.destroy_all
+    UserAchievement.destroy_all
 
     client.tickets.map { |x| x[:id] }.each do |ticket|
       ZendeskAPI::Ticket.destroy!(client, id: ticket)
     end
 
-    (1..100).each do |n|
+    (1..400).each do |n|
+      puts n
       ZendeskAPI::Ticket.create!(client, subject: subjects.shuffle.first,
                                  comment: { value: "Conteúdo do Chamado" },
                                  status: status,

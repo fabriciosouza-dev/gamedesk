@@ -4,7 +4,8 @@ class UserRewardsController < ApplicationController
   # GET /user_rewards or /user_rewards.json
   def index
     @user_rewards = UserReward.where(assignee_id: current_user.assignee_id)
-    @rewards = ExecutaRecompensasService.new(assignee_id: current_user.assignee_id).execute
+    @rewards, aviso_recompensas = ExecutaRecompensasService.new(assignee_id: current_user.assignee_id).execute
+    flash[:success] = aviso_recompensas.join('<br/>') if aviso_recompensas.present?
   end
 
   # GET /user_rewards/1 or /user_rewards/1.json
@@ -58,13 +59,14 @@ class UserRewardsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_user_reward
-      @user_reward = UserReward.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def user_reward_params
-      params.fetch(:user_reward, {})
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_user_reward
+    @user_reward = UserReward.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def user_reward_params
+    params.fetch(:user_reward, {})
+  end
 end

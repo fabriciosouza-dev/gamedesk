@@ -16,7 +16,7 @@ module ApplicationHelper
   def link_to_visualizar(path, options = {})
     if can? :read, :all
       link_to path,
-              class: "btn btn-info btn-sm  #{options[:class] || 'btn-icon'}",
+              class: "btn btn-#{options[:btn_color] || 'info'} btn-sm  #{options[:class] || 'btn-icon'}",
               title: options[:title] || "Visualizar",
               remote: options[:remote] || false,
               target: options[:target] || '_self',

@@ -4,7 +4,7 @@
     <div class="card card-primary">
       <div class="card-header" style="justify-content: space-between;">
         <h4>Perfil</h4>
-        <%= link_to_editar(edit_profile_path(@profile), { label: 'Editar Perfil', class: "btn btn-primary" }) %>
+        <%= link_to_editar(edit_profile_path(@profile), { label: 'Editar Perfil', btn_color: "primary" }) %>
       </div>
       <div class="card-body">
         <div class="row align-items-center">
@@ -18,7 +18,7 @@
           </div>
           <div class="col-md-6 no-padding">
             <h5>XP</h5>
-            <%= progress(@profile.yield.xp.to_i, Util.calcula_xp(@profile.yield.level),
+            <%= progress(@profile&.yield&.xp.to_i, Util.calcula_xp(@profile&.yield&.level),
                          { height: 50, show_percentage: true, label_progress: 'XP:' }) %>
           </div>
         </div>
@@ -31,13 +31,56 @@
     <div class="card card-dark">
       <div class="card-header">
         <h4>Conquistas</h4>
-      </div>
-      <div class="card-body">
-        <div class="gallery">
-          <% @user_achievements.each do |icone| %>
-            <%= image_tag icone&.achievement&.image, class: "img-responsive gallery-item" %>
-          <% end %>
+        <div class="card-header-action">
+          <%= link_to_visualizar(user_achievements_path, { label: 'Veja Mais', btn_color: 'primary' }) %>
         </div>
+      </div>
+      <div class="card-body" id="top-5-scroll" tabindex="2" style="height: 500px; overflow: hidden; outline: none;">
+        <ul class="list-unstyled list-unstyled-border">
+          <% @user_achievements.each do |icone| %>
+            <li class="media">
+              <%= image_tag icone&.achievement&.image, class: "mr-3 rounded", width: "55" %>
+              <div class="media-body">
+                <div class="media-title"><%= icone&.achievement.name %></div>
+                <div class="mt-1">
+                  <div class="budget-price">
+                    <div class="budget-price-label"><%= icone&.achievement.descricao %></div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    <div class="card gradient-bottom card-dark">
+      <div class="card-header">
+        <h4>Recompensas Concluídas</h4>
+        <div class="card-header-action">
+          <%= link_to_visualizar(user_rewards_path, { label: 'Veja Mais', btn_color: 'primary' }) %>
+        </div>
+      </div>
+      <div class="card-body" id="top-5-scroll" tabindex="3" style="height: 315px; overflow: hidden; outline: none;">
+        <ul class="list-unstyled list-unstyled-border">
+          <% @user_rewards.each do |user_reward| %>
+            <% qtd = user_reward.reward.type_association.quantidade %>
+            <li class="media">
+              <%= image_tag "achievements/reward.png", class: "mr-3 rounded", width: "55" %>
+              <div class="media-body">
+                <div class="media-title"><%= user_reward.reward.name %></div>
+                <div class="mt-1">
+                  <div class="budget-price">
+                    <div class="budget-price-square bg-success" data-width="75%" style="width: 75%;"></div>
+                    <div class="budget-price-label"><%= qtd %>/<%= qtd %></div>
+                  </div>
+                  <div class="budget-price">
+                    <%= user_reward.reward.recompensa %>
+                  </div>
+                </div>
+              </div>
+            </li>
+          <% end %>
+        </ul>
       </div>
     </div>
   </div>

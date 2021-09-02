@@ -1,10 +1,11 @@
 class Util
   def self.calcula_xp(level)
+    return 0 unless level.present?
     (level / 0.07) ** 2
   end
 
   def self.percent(value, total)
-    return 0 if value.nil? || total.nil?
+    return 0 if value.to_i == 0 || total.to_i == 0
     (value * 100) / total
   end
 

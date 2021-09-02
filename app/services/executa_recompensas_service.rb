@@ -6,8 +6,10 @@ class ExecutaRecompensasService
   def execute
 
     array = []
+    aviso_recompensas = []
     if @assignee_id.present?
       Reward.where(status: 1).each do |reward|
+        dta_fim = reward.type_association.dta_fim
         if reward&.type_association&.regra.present?
 
         else
@@ -19,28 +21,30 @@ class ExecutaRecompensasService
           SQL
 
           sql += " and t.closed_at >= '#{reward&.type_association&.dta_inicio}'" if reward&.type_association&.dta_inicio.present?
-          sql += " and t.closed_at <= '#{reward&.type_association&.dta_fim}'" if reward&.type_association&.dta_fim.present?
+          sql += " and t.closed_at <= '#{dta_fim}'" if dta_fim.present?
           sql += " and priority in (#{junta_prioridades(reward&.type_association&.priority)})" if reward&.type_association&.priority.present?
         end
 
         qtd = Ticket.find_by_sql([sql, { assignee_id: @assignee_id }]).size
         qtd_reward = reward&.type_association&.quantidade
+
         if qtd.to_i >= qtd_reward.to_i
-          qtd = qtd_reward
-          UserReward.where(assignee_id: @assignee_id, reward_id: reward.id)
-                    .first_or_create(assignee_id: @assignee_id, reward_id: reward.id)
+          user_reward = UserReward.find_by(assignee_id: @assignee_id, reward_id: reward.id)
+          unless user_reward.present?
+            UserReward.create(assignee_id: @assignee_id, reward_id: reward.id)
+            aviso_recompensas << "Você ganhou: '#{reward.recompensa}'!!"
+          end
+        else
+          reward.qtd_user = qtd
+          reward.qtd_reward = qtd_reward
+          reward.color = return_hash(qtd, qtd_reward)[:color]
+          reward.order = return_hash(qtd, qtd_reward)[:order]
+          reward.percentage = Util.percent(qtd, qtd_reward).round(2)
+          array << reward if (dta_fim.to_date + 7.days) > Date.today
         end
-
-        reward.qtd_user = qtd
-        reward.qtd_reward = qtd_reward
-        reward.color = return_hash(qtd, qtd_reward)[:color]
-        reward.order = return_hash(qtd, qtd_reward)[:order]
-        reward.percentage = Util.percent(qtd, qtd_reward).round(2)
-
-        array << reward
       end
     end
-    return array
+    return array, aviso_recompensas
   end
 
   def junta_prioridades(value)
