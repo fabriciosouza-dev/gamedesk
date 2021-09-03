@@ -16,7 +16,7 @@ class ExecutaRecompensasService
           sql = <<-SQL
                 SELECT *
                   FROM gamedesk.tickets t
-                 WHERE t.status = 'solved'
+                 WHERE t.status = #{Ticket.statuses[:resolvido]}
                    AND t.assignee_id = :assignee_id
           SQL
 

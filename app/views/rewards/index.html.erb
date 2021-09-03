@@ -25,7 +25,7 @@
           <td><%= reward.recompensa %></td>
           <td><%= reward&.type_association&.dta_inicio %></td>
           <td><%= reward&.type_association&.dta_fim %></td>
-          <td><%= reward&.type_association&.decorate.priorities %></td>
+          <td><%= reward&.type_association&.decorate&.priorities %></td>
           <td><%= reward&.type_association&.quantidade %></td>
           <td><%= reward&.status.to_i == 1 ? "Ativo" : "Inativo" %></td>
           <td align="center">

@@ -12,12 +12,12 @@ class DashboardsController < ApplicationController
     @grafico = GeraGraficoService.new(tickets: tickets).pizza_chamados_totais
     @grafico_priority_chart = GeraGraficoService.new(tickets: tickets).barra_priority_chamados
     @last_24h_tickets = tickets.where('open_at >= ?', 24.hours.ago).size
-    @last_tickets = tickets.where(status: [:aberto, :pendente]).take(6)
+    @last_tickets = tickets.where(status: [:atribuido, :aguardando_desenvolvimento]).take(6)
     @nmr_tickets = tickets.size
   end
 
   def popula_tabela_service
-    PopulaTabelaService.new(nil).execute
+    PopulaTabelaMantisService.new(nil).execute
     render json: { success: 'ok' }, status: 202
   end
 end

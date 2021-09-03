@@ -14,7 +14,6 @@
               <thead>
               <tr>
                 <th>Atríbuido</th>
-                <th>Título</th>
                 <th>Prioridade</th>
                 <th>Status</th>
                 <th>Atualizado em</th>
@@ -36,7 +35,6 @@
                       <% end %>
                     <% end %>
                   </td>
-                  <td><%= ticket.subject %></td>
                   <td><%= translate_enum_name(Ticket, :priorities, ticket.priority) %></td>
                   <td><%= translate_enum_name(Ticket, :statuses, ticket.status) %></td>
                   <td><%= timezone(ticket.updated_at) %></td>

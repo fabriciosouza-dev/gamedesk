@@ -5,10 +5,11 @@ class CreateUsers < ActiveRecord::Migration[5.2]
         t.boolean :admin
         t.string :name
         t.string :phone
-        t.numeric :assignee_id
+        t.integer :assignee_id
         t.integer :status
         t.timestamps
       end
+      add_index "gamedesk.users", :assignee_id, unique: true
     end
   end
 end

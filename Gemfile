@@ -50,7 +50,10 @@ gem 'jquery-rails'
 gem 'autoprefixer-rails'
 gem 'izitoast'
 gem 'whenever', require: false
-
+gem 'rest-client', '~> 2.1.0'
+gem 'http-cookie', '~> 1.0', '>= 1.0.4'
+gem 'mime-types', '~> 3.3', '>= 3.3.1'
+gem 'netrc', '~> 0.11.0'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

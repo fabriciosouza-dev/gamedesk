@@ -11,16 +11,30 @@ pt-BR:
         description: 'Descrição'
         priority: 'Prioridade'
         priorities:
-          baixo: "Baixa"
+          nenhuma: "Nenhuma"
+          baixa: "Baixa"
           normal: "Normal"
           alta: "Alta"
           urgente: "Urgente"
+          imediato: "Imediato"
         status: 'Status'
         statuses:
-          aberto: "Aberto"
-          resolvido: "Resolvido"
-          pendente: "Pendente"
-          fechado: "Fechado"
+          novo: 'Novo'
+          retorno: 'Retorno'
+          admitido: 'Admitido'
+          confirmado: 'Confirmado'
+          atribuido: 'Atribuído'
+          aguardando_teste_prod: 'Aguardando Teste em PROD'
+          resolvido: 'Resolvido'
+          fechado: 'Fechado'
+          aguardando_desenvolvimento: 'Aguardando Desenvolvimento'
+          desenvolvimento: 'Desenvolvimento'
+          teste_interno_hmg: 'Teste Interno HMG'
+          aguardando_deploy_prod: 'Aguardando Deploy PROD'
+          aguardando_code_review: 'Aguardando Code Review'
+          aguardando_deploy_hmg: 'Aguardando Deploy HMG'
+          aguardando_teste_hmg: 'Aguardando Teste HMG'
+          teste_interno_prod: 'Teste Interno PROD'
         recipient: ''
         requester_id: ''
         submitter_id: ''
