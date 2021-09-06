@@ -46,9 +46,8 @@ class PopulaTabelaMantisService
         new_comments = []
         if comments.present?
           comments.each do |comment|
-            new_comments << ticket_object.comments.where(comment_id: comment.id).first_or_create(
-              atributos_comments(comment, ticket_object)
-            )
+            new_comments << ticket_object.comments.where(ticket_id: ticket['id']).first_or_create(
+              atributos_comments(comment, ticket_object))
           end
         end
         if ticket_object.status == "atribuído" && ticket['status_id'] == Ticket.statuses[:resolvido] && ticket_object.flag_calc_level == 1
