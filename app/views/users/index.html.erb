@@ -8,8 +8,8 @@
     <table class="table table-bordered dataTable" width="100%" cellspacing="0">
       <thead>
       <tr>
+        <th>Código</th>
         <th>Nome</th>
-        <th>Telefone</th>
         <th>E-mail</th>
         <th>Admin</th>
         <th>Status</th>
@@ -19,8 +19,8 @@
       <tbody style="font-weight: bold">
       <% @users.each do |user| %>
         <tr>
+          <td><%= user.assignee_id %></td>
           <td><%= user.name %></td>
-          <td><%= user.phone %></td>
           <td><%= user.email %></td>
           <td><%= user.admin? ? "Sim" : "Não" %></td>
           <td><%= user.status.to_i == 1 ? "Ativo" : "Inativo" %></td>
