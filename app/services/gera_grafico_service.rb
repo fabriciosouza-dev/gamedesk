@@ -8,7 +8,7 @@ class GeraGraficoService
     grafico = { labels: group.map { |x| Util.translate_enum_name(Ticket, :statuses, x[:status]) },
                 datasets: [{ label: 'Status dos Chamados',
                              data: group.map { |x| x[:count] },
-                             backgroundColor: colors,
+                             backgroundColor: Util.colors,
                              hoverOffset: 4
                            }]
     }
@@ -36,7 +36,7 @@ class GeraGraficoService
       array << {
         label: Util.translate_enum_name(Ticket, :priorities, row[:priority]),
         data: [row[:count]],
-        backgroundColor: colors[index],
+        backgroundColor: Util.colors[index],
         hoverOffset: 4
       }
     end
@@ -46,10 +46,5 @@ class GeraGraficoService
   end
 
   private
-
-  def colors
-    ['#EB870E', '#464646', '#7678ED', '#08A045', '#DB162F', '#D80CE8',
-     '#5F00F5', '#A8A200', '#A83208']
-  end
 
 end

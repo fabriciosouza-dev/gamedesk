@@ -17,4 +17,10 @@ class Util
   def self.format_date_br(date)
     date.strftime("%d/%m/%Y %H:%M")
   end
+
+  def self.colors
+    ['#EB870E', '#464646', '#7678ED', '#08A045', '#DB162F', '#D80CE8',
+     '#5F00F5', '#A8A200', '#A83208', '#FFBF00',
+     '#DE3163', '#9FE2BF', '#40E0D0', '#6495ED', '#CCCCFF',]
+  end
 end
