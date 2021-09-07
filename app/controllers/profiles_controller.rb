@@ -11,7 +11,6 @@ class ProfilesController < ApplicationController
     @user_rewards = UserReward.eager_load(reward: :type_association)
                               .where(assignee_id: current_user.assignee_id)
 
-
   end
 
   # GET /profiles/1 or /profiles/1.json
@@ -48,30 +47,36 @@ class ProfilesController < ApplicationController
       { objetivo: 'Chamado atribuido', ponto: 1, class: '' },
       { objetivo: 'Resolução do chamado', ponto: 2, class: '' },
       { objetivo: 'Adicionou comentarios /por comentário', ponto: 1, class: '' },
-      { objetivo: 'Se a prioridade for urgente e for resolvida:', ponto: nil, class: 'background-grey' },
-      { objetivo: 'No mesmo dia de criação', ponto: 15, class: '' },
-      { objetivo: '1 dia depois', ponto: 13, class: '' },
-      { objetivo: '2 a 7 dias', ponto: 11, class: '' },
-      { objetivo: '8 a 30 dias', ponto: 9, class: '' },
-      { objetivo: 'Acima de 30 dias', ponto: 7, class: '' },
-      { objetivo: 'Se a prioridade for alta e for resolvida:', ponto: nil, class: 'background-grey' },
-      { objetivo: 'No mesmo dia de criação', ponto: 13, class: '' },
-      { objetivo: '1 dia depois', ponto: 11, class: '' },
-      { objetivo: '2 a 7 dias', ponto: 9, class: '' },
-      { objetivo: '8 a 30 dias', ponto: 7, class: '' },
-      { objetivo: 'Acima de 30 dias', ponto: 5, class: '' },
-      { objetivo: 'Se a prioridade for normal e for resolvida:', ponto: nil, class: 'background-grey' },
-      { objetivo: 'No mesmo dia de criação', ponto: 11, class: '' },
-      { objetivo: '1 dia depois', ponto: 9, class: '' },
-      { objetivo: '2 a 7 dias', ponto: 7, class: '' },
-      { objetivo: '8 a 30 dias', ponto: 5, class: '' },
-      { objetivo: 'Acima de 30 dias', ponto: 3, class: '' },
-      { objetivo: 'Se a prioridade for baixa e for resolvida:', ponto: nil, class: 'background-grey' },
-      { objetivo: 'No mesmo dia de criação', ponto: 9, class: '' },
-      { objetivo: '1 dia depois', ponto: 7, class: '' },
-      { objetivo: '2 a 7 dias', ponto: 5, class: '' },
-      { objetivo: '8 a 30 dias', ponto: 3, class: '' },
-      { objetivo: 'Acima de 30 dias', ponto: 1, class: '' }
+      { objetivo: 'Se a prioridade for <b>IMEDIATA</b> e for resolvida:', ponto: nil, class: 'background-grey' },
+      { objetivo: 'No mesmo dia de criação', ponto: 20, class: '' },
+      { objetivo: '1 dia depois', ponto: 18, class: '' },
+      { objetivo: '2 a 7 dias', ponto: 16, class: '' },
+      { objetivo: '8 a 30 dias', ponto: 14, class: '' },
+      { objetivo: 'Acima de 30 dias', ponto: 12, class: '' },
+      { objetivo: 'Se a prioridade for <b>URGENTE</b> e for resolvida:', ponto: nil, class: 'background-grey' },
+      { objetivo: 'No mesmo dia de criação', ponto: 18, class: '' },
+      { objetivo: '1 dia depois', ponto: 16, class: '' },
+      { objetivo: '2 a 7 dias', ponto: 14, class: '' },
+      { objetivo: '8 a 30 dias', ponto: 12, class: '' },
+      { objetivo: 'Acima de 30 dias', ponto: 10, class: '' },
+      { objetivo: 'Se a prioridade for <b>ALTA</b> e for resolvida:', ponto: nil, class: 'background-grey' },
+      { objetivo: 'No mesmo dia de criação', ponto: 16, class: '' },
+      { objetivo: '1 dia depois', ponto: 14, class: '' },
+      { objetivo: '2 a 7 dias', ponto: 12, class: '' },
+      { objetivo: '8 a 30 dias', ponto: 10, class: '' },
+      { objetivo: 'Acima de 30 dias', ponto: 8, class: '' },
+      { objetivo: 'Se a prioridade for <b>NORMAL</b> e for resolvida:', ponto: nil, class: 'background-grey' },
+      { objetivo: 'No mesmo dia de criação', ponto: 14, class: '' },
+      { objetivo: '1 dia depois', ponto: 12, class: '' },
+      { objetivo: '2 a 7 dias', ponto: 10, class: '' },
+      { objetivo: '8 a 30 dias', ponto: 8, class: '' },
+      { objetivo: 'Acima de 30 dias', ponto: 6, class: '' },
+      { objetivo: 'Se a prioridade for <b>BAIXA</b> e for resolvida:', ponto: nil, class: 'background-grey' },
+      { objetivo: 'No mesmo dia de criação', ponto: 12, class: '' },
+      { objetivo: '1 dia depois', ponto: 10, class: '' },
+      { objetivo: '2 a 7 dias', ponto: 8, class: '' },
+      { objetivo: '8 a 30 dias', ponto: 6, class: '' },
+      { objetivo: 'Acima de 30 dias', ponto: 4, class: '' }
     ]
   end
 

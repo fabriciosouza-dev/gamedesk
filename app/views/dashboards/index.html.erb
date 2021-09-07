@@ -34,7 +34,7 @@
 
     var priority_chart = document.getElementById("priority_chart").getContext('2d');
     var priorityChart = new Chart(priority_chart, {
-        type: 'polarArea',
+        type: 'bar',
         data: JSON.parse('<%= @grafico_priority_chart.to_json.html_safe %>'),
     });
 

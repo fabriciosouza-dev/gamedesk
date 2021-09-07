@@ -96,13 +96,13 @@ class CalculaLevelMantisService
   end
 
   def scale_of_points(type, index)
-    months = (Date.today.month - @new_ticket.open_at.to_date.month).to_i
+    # months = (Date.today.month - @new_ticket.open_at.to_date.month).to_i
     hash_priority = {
-      imediato: [20, 15, 10, 8, progressao_aritmetica(months, 5)],
-      urgente: [15, 10, 8, 5, progressao_aritmetica(months, 4)],
-      alta: [10, 8, 5, 1, progressao_aritmetica(months, 3)],
-      normal: [5, 3, 1, 0, progressao_aritmetica(months, 2)],
-      baixa: [2, 1, 0, 0, progressao_aritmetica(months, 1)]
+      imediato: [20, 18, 16, 14, 12],
+      urgente: [18, 16, 14, 12, 10],
+      alta: [16, 14, 12, 10, 8],
+      normal: [14, 12, 10, 8, 6,],
+      baixa: [12, 10, 8, 6, 4]
     }
     hash_priority[type.to_sym][index]
   end

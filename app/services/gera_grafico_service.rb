@@ -17,10 +17,15 @@ class GeraGraficoService
   end
 
   def barra_priority_chamados
-    prioridades = Ticket.priorities.to_a
-    group = prioridades.map { |x| { priority: x[0], count: 0 } }
 
-    @tickets.group_by { |z| z.priority }.each do |priority|
+    group_priority = @tickets.group_by { |z| z.priority }
+
+    prioridades = group_priority.map { |x| x[0] }
+
+    group = Ticket.priorities.to_a.map { |x| { priority: x[0], count: 0 } }
+                  .select { |z| prioridades.include? z[:priority] }
+
+    group_priority.each do |priority|
       group.each do |row|
         row[:count] = priority[1].size if priority[0] == row[:priority]
       end

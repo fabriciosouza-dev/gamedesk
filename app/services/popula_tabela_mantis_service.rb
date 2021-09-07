@@ -3,7 +3,10 @@ class PopulaTabelaMantisService
   require 'json'
   require 'zendesk_api'
 
-  def initialize(params) end
+  def initialize(params)
+    @dta_inicio = params[:dta_inicio] || Date.today.strftime('%d/%m/%Y')
+    @dta_fim = params[:dta_fim] || Date.today.strftime('%d/%m/%Y')
+  end
 
   def execute
 
@@ -11,7 +14,7 @@ class PopulaTabelaMantisService
                                       email: Rails.application.credentials.aws[:secret_username_mantis],
                                       password: Rails.application.credentials.aws[:secret_password_mantis]).body)["auth_token"]
 
-    url_chamados = 'https://api.siedos.com.br/issues/fabricio?dta_inicio=01/01/2019&dta_fim=02/08/2021'
+    url_chamados = "https://api.siedos.com.br/issues/fabricio?dta_inicio=#{@dta_inicio}&dta_fim=#{@dta_fim}"
     url_users = 'https://api.siedos.com.br/issues/fabricio_users'
 
     response_chamados = RestClient.get(url_chamados, Authorization: auth)
@@ -26,7 +29,7 @@ class PopulaTabelaMantisService
           .first_or_create(atributos_user(user,
                                           User.default_password,
                                           admin))
-      # ConquistasService.new(assignee_id: user.id).execute
+      ConquistasService.new(assignee_id: user["id"]).execute
     end
 
     obj_chamados.each do |ticket|
@@ -42,7 +45,7 @@ class PopulaTabelaMantisService
           pending = nil
         end
         ticket_object.update(atributos_tickets(ticket, pending).except(:ticket_id)) if ticket_object.changed_at.to_s != ticket['updated_at'].to_s
-        comments = ticket['comments'].select { |x| !ticket_object.comments.map(&:comment_id).include?(x['id']) }
+        comments = ticket['comments'].select { |x| !ticket_object.comments.map(&:ticket_id).include?(ticket['id']) }
         new_comments = []
         if comments.present?
           comments.each do |comment|

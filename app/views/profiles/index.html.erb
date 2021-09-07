@@ -101,7 +101,7 @@
             <tbody>
             <% @regras.each do |regra| %>
               <tr class="<%= regra[:class] %>">
-                <td><%= regra[:objetivo] %></td>
+                <td><%= regra[:objetivo].html_safe %></td>
                 <td><%= regra[:ponto] %></td>
               </tr>
             <% end %>

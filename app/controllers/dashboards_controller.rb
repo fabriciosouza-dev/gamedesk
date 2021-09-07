@@ -17,7 +17,7 @@ class DashboardsController < ApplicationController
   end
 
   def popula_tabela_service
-    PopulaTabelaMantisService.new(nil).execute
+    PopulaTabelaMantisService.new({}).execute
     render json: { success: 'ok' }, status: 202
   end
 end
