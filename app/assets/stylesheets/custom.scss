@@ -214,8 +214,8 @@ btn-primary.disabled, .btn-primary:disabled {
   width: 30px;
   height: 30px;
   border: 2px solid #2D2D2D;
-  color:white;
-  background:#2D2D2D;
+  color: white;
+  background: #2D2D2D;
   border-radius: 50%;
   top: 35px;
   right: -70px;
@@ -224,7 +224,7 @@ btn-primary.disabled, .btn-primary:disabled {
   z-index: 10;
 }
 
-.inner-badge p{
+.inner-badge p {
   display: table-cell;
   vertical-align: middle;
   padding: 1px;
@@ -233,4 +233,16 @@ btn-primary.disabled, .btn-primary:disabled {
 .background-grey {
   background-color: rgba(0, 0, 0, 0.04);
   color: #666;
+}
+
+.code {
+  background-color: #464646 !important;
+  color: white !important;
+  padding-top: 15px !important;
+  padding-left: 15px !important;
+  padding-right: 5px !important;
+}
+
+.code::placeholder {
+  color: #CCCCCC;
 }

@@ -10,7 +10,7 @@
         <div class="row align-items-center">
           <div class="col-md-2 no-padding">
             <div class="outter-badge">
-              <%= user_profile_img(@profile, { class: 'rounded-circle center-img-perfil', id: 'img_prev' }) %>
+              <%= user_profile_img(@profile, { class: 'rounded-circle center-img-perfil', id: 'img_prev', size: 100 }) %>
               <div class="inner-badge">
                 <p><%= @profile&.yield&.level %></p>
               </div>

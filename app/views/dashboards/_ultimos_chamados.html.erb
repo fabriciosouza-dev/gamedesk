@@ -25,12 +25,12 @@
                   <td>
                     <% if current_user.admin? %>
                       <%= link_to edit_user_path(ticket.user), class: 'font-weight-600' do %>
-                        <%= user_profile_img(ticket.user, { class: "rounded-circle mr-1", width: "30" }) %>
+                        <%= user_profile_img(ticket.user, { class: "rounded-circle mr-1", size: 30 }) %>
                         <%= ticket.user.name %>
                       <% end %>
                     <% else %>
                       <%= link_to profiles_path, class: 'font-weight-600' do %>
-                        <%= user_profile_img(ticket.user, { class: "rounded-circle mr-1", width: "30" }) %>
+                        <%= user_profile_img(ticket.user, { class: "rounded-circle mr-1", size: 30 }) %>
                         <%= ticket.user.name %>
                       <% end %>
                     <% end %>

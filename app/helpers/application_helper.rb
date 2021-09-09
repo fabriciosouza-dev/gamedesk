@@ -86,9 +86,9 @@ module ApplicationHelper
 
   def user_profile_img(object, options = {})
     if object.image.attached?
-      image_tag object.image, id: options[:id], class: options[:class], data: options[:data], width: options[:width]
+      image_tag object.image, id: options[:id], class: options[:class], data: options[:data], size: options[:size]
     else
-      image_tag 'avatar-1.jpg', id: options[:id], class: options[:class], width: options[:width]
+      image_tag 'avatar-1.jpg', id: options[:id], class: options[:class], size: options[:size]
     end
   end
 
