@@ -59,6 +59,7 @@
   <%= csp_meta_tag %>
 
   <%= stylesheet_link_tag 'application' %>
+  <%= javascript_include_tag 'application' %>
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-94034622-3"></script>
   <script>
@@ -92,6 +93,17 @@
     </div>
   </section>
 </div>
-<%= javascript_include_tag 'application' %>
+<% if flash.any? %>
+  <script type="text/javascript">
+      <% flash.each do |key, value| %>
+      <% type = key.to_s.gsub('alert', 'error').gsub('notice', 'info') %>
+      iziToast.<%= type %>({
+          title: "<%= value.html_safe %>",
+          position: 'topRight'
+      });
+      <% end %>
+  </script>
+  <% flash.clear %>
+<% end %>
 </body>
 </html>
