@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   load_and_authorize_resource
   before_action :set_user, only: %i[ show edit update destroy ]
   before_action :add_breadcrumb_menu, only: %i[ show edit update destroy new ]
-  before_action :permission
+  # before_action :permission
 
 
   # GET /users or /users.json
