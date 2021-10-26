@@ -49,15 +49,34 @@ ActiveRecord::Schema.define(version: 2021_08_25_015058) do
 
   create_table "comments", force: :cascade do |t|
     t.integer "ticket_id", comment: "Identifica o id do pai ticket do comentario"
+    t.decimal "comment_id", comment: "Identifica o comment_id do comentario"
+    t.string "body", comment: "Identifica o corpo do comentario"
+    t.string "html_body", comment: "Identifica o html_body do comentario"
+    t.string "ip_address", comment: "Identifica o ip do comentario"
+    t.string "location", comment: "Identifica a localização do comentario"
+    t.integer "public", comment: "Identifica se é publico o comentario"
     t.integer "flag_game", default: 0, comment: "Identifica se o ticket foi atualiazado nas regras do game 0-Não 1-Sim"
     t.datetime "open_at", comment: "Identifica o horario de abertura do comentario"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  create_table "requesters", force: :cascade do |t|
+    t.string "name", comment: "Identifica o nome do funcionario"
+    t.string "email", comment: "Identifica o email do funcionario"
+    t.string "phone", comment: "Identifica o telefone do funcionario"
+    t.decimal "requester_id", comment: "Identifica o id do zendesk funcionario"
+    t.integer "status", default: 1, comment: "Identifica se ativo ou inativo o funcionario 0-Inativo 1-Ativo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "rewards", force: :cascade do |t|
     t.string "name", comment: "Identifica o nome da recompensa"
-    t.string "recompensa", comment: "Identifica a recompensa"
+    t.integer "type_rule_id", comment: "Identifica o tipo da recompensa"
+    t.string "recompensa", comment: "Identifica a descrição da recompensa"
+    t.datetime "dta_inicio", comment: "Identifica a data inicio da recompensa"
+    t.datetime "dta_fim", comment: "Identifica a data fim da recompensa"
     t.integer "status", default: 1, comment: "Identifica se ativo ou inativo a recompensa 0-Inativo 1-Ativo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -65,9 +84,27 @@ ActiveRecord::Schema.define(version: 2021_08_25_015058) do
 
   create_table "tickets", force: :cascade do |t|
     t.integer "ticket_id", comment: "Identifica o id do ticket"
+    t.string "subject", comment: "Identifica o assunto do ticket"
+    t.string "raw_subject", comment: "Identifica o assunto cru do ticket"
+    t.string "description", comment: "Identifica a descrição do ticket"
     t.string "priority", comment: "Identifica a prioridade do ticket"
-    t.integer "status", comment: "Identifica o status do ticket"
-    t.integer "assignee_id", comment: "Identifica o atribuido id do ticket"
+    t.string "status", comment: "Identifica o status do ticket"
+    t.string "recipient", comment: "Identifica o recebedor do ticket"
+    t.decimal "requester_id", comment: "Identifica o solicitante id do ticket"
+    t.decimal "submitter_id", comment: "Identifica o apresentador id do ticket"
+    t.decimal "assignee_id", comment: "Identifica o atribuido id do ticket"
+    t.decimal "organization_id", comment: "Identifica a organização id do ticket"
+    t.decimal "group_id", comment: "Identifica o grupo id do ticket"
+    t.decimal "forum_topic_id", comment: "Identifica o forum do ticket"
+    t.decimal "problem_id", comment: "Identifica o problema id do ticket"
+    t.integer "has_incidents", comment: "Identifica o se tem incidentes id do ticket"
+    t.integer "is_public", comment: "Identifica o se é publico o ticket"
+    t.integer "allow_channelback", comment: "Identifica se permitir canal de retorno do ticket"
+    t.integer "allow_attachments", comment: "Identifica se permitir anexos no ticket"
+    t.string "satisfaction_rating", comment: "Identifica a satisfação do ticket"
+    t.decimal "ticket_form_id", comment: "Identifica o formulario id do ticket"
+    t.decimal "brand_id", comment: "Identifica a marca do ticket"
+    t.date "due_at", comment: "Identifica o horario de devido do ticket"
     t.integer "flag_game", default: 0, comment: "Identifica se o ticket foi atualiazado nas regras do game 0-Não 1-Sim"
     t.decimal "xp", default: "0.0", comment: "Identifica o xp do ticket"
     t.integer "flag_calc_level", default: 0, comment: "Identifica o ticket foi calculado level 0-não 1-sim"
@@ -77,33 +114,41 @@ ActiveRecord::Schema.define(version: 2021_08_25_015058) do
     t.datetime "closed_at", comment: "Identifica o horario de abertura do ticket"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["ticket_id"], name: "index_gamedesk.tickets_on_ticket_id", unique: true
   end
 
   create_table "type_associations", force: :cascade do |t|
     t.integer "type_rule_id"
-    t.string "regra"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "origem_type"
+    t.bigint "origem_id"
     t.integer "status"
     t.string "priority"
     t.integer "quantidade"
     t.datetime "dta_inicio"
     t.datetime "dta_fim"
+    t.string "regra"
+    t.index ["origem_type", "origem_id"], name: "index_type_associations_on_origem_type_and_origem_id"
+  end
+
+  create_table "type_rules", force: :cascade do |t|
+    t.string "name", comment: "Identifica o nome do tipo de recompensa"
+    t.string "chave", comment: "Identifica a chave do tipo de recompensa"
+    t.string "descricao", comment: "Identifica a descrição do tipo de recompensa"
+    t.integer "status", default: 1, comment: "Identifica se ativo ou inativo o tipo de recompensa 0-Inativo 1-Ativo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "origem_type"
-    t.bigint "origem_id"
-    t.index ["origem_type", "origem_id"], name: "index_gamedesk.type_associations_on_origem_type_and_origem_id"
   end
 
   create_table "user_achievements", force: :cascade do |t|
-    t.integer "assignee_id", comment: "Identifica o funcionario"
+    t.decimal "assignee_id", comment: "Identifica o funcionario"
     t.integer "achievement_id", comment: "Identifica o relacionamento da conquista"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "user_rewards", force: :cascade do |t|
-    t.integer "assignee_id", comment: "Identifica o funcionario"
+    t.decimal "assignee_id", comment: "Identifica o funcionario"
     t.integer "reward_id", comment: "Identifica o relacionamento da conquista"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -113,7 +158,7 @@ ActiveRecord::Schema.define(version: 2021_08_25_015058) do
     t.boolean "admin"
     t.string "name"
     t.string "phone"
-    t.integer "assignee_id"
+    t.decimal "assignee_id"
     t.integer "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -122,13 +167,12 @@ ActiveRecord::Schema.define(version: 2021_08_25_015058) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.index ["assignee_id"], name: "index_gamedesk.users_on_assignee_id", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   create_table "yields", force: :cascade do |t|
-    t.integer "assignee_id", comment: "Identifica o id do funcionario"
+    t.decimal "assignee_id", comment: "Identifica o id do funcionario"
     t.integer "level", default: 0, comment: "Identifica o nível do funcionario"
     t.decimal "xp", default: "0.0", comment: "Identifica o xp do funcionario"
     t.datetime "created_at", null: false
@@ -136,11 +180,4 @@ ActiveRecord::Schema.define(version: 2021_08_25_015058) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "comments", "tickets", primary_key: "ticket_id"
-  add_foreign_key "tickets", "users", column: "assignee_id", primary_key: "assignee_id"
-  add_foreign_key "user_achievements", "achievements"
-  add_foreign_key "user_achievements", "users", column: "assignee_id", primary_key: "assignee_id"
-  add_foreign_key "user_rewards", "rewards"
-  add_foreign_key "user_rewards", "users", column: "assignee_id", primary_key: "assignee_id"
-  add_foreign_key "yields", "users", column: "assignee_id", primary_key: "assignee_id"
 end

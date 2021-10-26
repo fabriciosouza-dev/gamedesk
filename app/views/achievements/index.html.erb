@@ -18,7 +18,7 @@
       <tbody style="font-weight: bold">
       <% @achievements.each do |achievement| %>
         <tr>
-          <td><%= image_tag achievement.image, id: achievement[:id], width: 30 %></td>
+          <td><%= (image_tag achievement.image, id: achievement[:id], width: 30) if achievement.image.attached? %></td>
           <td><%= achievement.name %></td>
           <td><%= achievement.descricao %></td>
           <td><%= achievement.status.to_i == 1 ? "Ativo" : "Inativo" %></td>

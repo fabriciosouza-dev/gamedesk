@@ -14,7 +14,7 @@
               <%= img_or_default(f&.object, { class: 'rounded-circle profile-widget-picture', id: 'img_prev' }) %>
             </div>
             <div class="custom-file">
-              <%= f.file_field :image, class: 'custom-file-input', onchange: "readURL(this);" %>
+              <%= f.file_field :image, class: 'custom-file-input', onchange: "readURL(this);", required: true %>
               <%= f.label :image, "#{translate_attr(f.object.class.name, :image)}", id: 'label_imag', class: 'custom-file-label' %>
               <br/>
             </div>
@@ -22,7 +22,7 @@
           <div class="form-row">
             <div class="form-group col-md-12">
               <%= f.label :name %><br/>
-              <%= f.text_field :name, autofocus: true, class: 'form-control' %>
+              <%= f.text_field :name, autofocus: true, class: 'form-control', required: true %>
             </div>
           </div>
           <div class="form-row">
@@ -34,7 +34,7 @@
           <div class="form-row">
             <div class="form-group col-md-12">
               <%= f.label :regra %><br/>
-              <%= f.text_area :regra, rows: 15, class: 'code', style: 'width: 100%', placeholder: 'Digite o código' %>
+              <%= f.text_area :regra, rows: 15, class: 'code', style: 'width: 100%', placeholder: 'Digite o código', required: true %>
             </div>
           </div>
           <div class="form-row">
